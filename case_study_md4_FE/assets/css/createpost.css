@@ -1,0 +1,30 @@
+.container-create-post {
+    width: 500px;
+    height: 428px;
+    border-radius: 10px;
+    background-color: #ececec;
+    position: absolute;
+    left: 550px;
+    top: 100px;
+}
+
+.top-create-post{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 5px 5px 5px ;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.top-create-post div span{
+    font-size: 22px;
+    font-weight: inherit;
+    padding-top: 20px;
+}
+
+.dddd {
+    height: 300px;
+}
+
+.action{
+    padding: 5px 5px 5px 5px;
+}
