@@ -14,9 +14,6 @@ public class Post  {
     @ManyToOne
     private Account account;
 
-    @ManyToOne
-    private Group parent;
-
     @Column(length = 10000000)
     private String content;
     @Column(length = 10000000)
