@@ -39,6 +39,7 @@ margin: auto;
 
 }
 
+
 .profile-top .container-info{
     display: flex;
     justify-content: space-between;
@@ -98,6 +99,14 @@ margin: auto;
     font-size: 16px;
     font-weight: normal;
 }
+.profile-main{
+    display: flex;
+    margin-top: 50px;
+    width: 80%;
+    height: 100%;
+    margin-left: 180px;
+}
+
 
 
 
@@ -117,7 +126,7 @@ margin: auto;
 
 }
 
-.profile-panel-left{
+.profile-panel-left-top{
 
 }
 
