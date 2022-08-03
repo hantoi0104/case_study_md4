@@ -19,7 +19,7 @@
 
 <body>
 <nav>
-    <div class="nav-left">
+    <div  class="nav-left">
         <img onclick="location.href='home.html' " src="../assets/img/vietnamLogo.png" alt="Logo">
         <form>
             <div class="search">
@@ -30,7 +30,7 @@
             </div>
         </form>
     </div>
-    <div class="nav-middle">
+    <div  class="nav-middle">
         <a href="#" class="active">
             <i class="fa fa-home"></i>
         </a>
@@ -56,7 +56,10 @@
         </a>
 
         <a href="#">
-            <i class="fas fa-ellipsis-h"></i>
+            <div class="fas fa-ellipsis-h">
+
+            </div>
+
         </a>
     </div>
 </nav>
@@ -96,51 +99,94 @@
     </div>
     <div class="container-menu">
         <ul>
-            <li>Bài viết</li>
+            <li>bài viết</li>
             <li>Giới thiệu</li>
             <li>Bạn bè</li>
             <li>Ảnh</li>
             <li>Video</li>
             <li>Check in</li>
-            <li>Xem thêm</li>
+            <li class="dropdown">
+                <button style=" font-size: 15px ;border: none ;border-radius: 5px ; background: #bdb7b7">Xem thêm</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </li>
         </ul>
     </div>
 
 </div>
 
 
-<div class="profile-main">
+<div  class="profile-main">
 
-    <div class="profile-main-left">
+    <div  style="margin: auto; border-radius: 20px" class="profile-main-left">
         <div>
-            <div class="profile-panel-left-top">
-                <h2 style="margin: auto">Gioi thieu</h2><br>
+            <div style="border-radius: 20px;background: #e4e6eb" class="profile-panel-left-top">
+                <h2 style="margin-left: 20px">  Giới thiệu</h2><br>
 
-                <div style="margin-left: 100px"><h3>them tieu su</h3></div>
-                <h3><i class="fas fa-graduation-cap"></i>dang hoc tai giao thong van tai</h3>
-                <h3><i class="fas fa-graduation-cap"></i>da hoc tai giao thong van tai</h3>
-                <h3><i class="fas fa-map-marker-alt"></i>da hoc tai giao thong van tai</h3>
-                <div style="margin-left: 100px"><h3>chinh sua chi tiet</h3></div>
+                <div style="margin-left: 200px;margin-right: 200px;background: #b3b6c2;border-radius: 20px"><h3 style="margin-left: 10px">thêm tiểu sử</h3></div>
+                <p style="margin-left: 40px;font-family: 'Times New Roman';"><i class="fas fa-graduation-cap"></i>đang học tại giao thông vận tải</p>
+                <p style="margin-left: 40px;font-family: 'Times New Roman';"><i class="fas fa-graduation-cap"></i>da hoc tai giao thong van tai</p>
+                <p style="margin-left: 40px;font-family: 'Times New Roman';"><i class="fas fa-map-marker-alt"></i>da hoc tai giao thong van tai</p>
+                <div style="margin-left: 200px;margin-right: 200px;background: #b3b6c2;border-radius: 20px"><h3 style="margin-left: 10px">thêm tiểu sử</h3></div>
 
 
             </div>
-            <div class="profile-panel-left-down">
-                <h2 style="margin-top: 40px">anh</h2>
-                <table style="width: 500px;height: 500px;border-radius: 10px">
+            <div style="background: #e4e6eb;border-radius: 20px" class="profile-panel-left-down">
+                <h2 style="margin-top: 40px;margin-left: 20px">ảnh</h2>
+                <table style="margin-left: 30px;width: 500px;height: 500px;border-radius: 10px">
                     <tr>
-                        <td><img style="width: 100px;height: 100px" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
-                        <td><img style="width: 100px;height: 100px" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
-                        <td><img style="width: 100px;height: 100px" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img  style=" float: left;width: 150px;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img  style=" float: left;width: 150px;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img style=" float:left;width:  77.8%;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
                     </tr>
                     <tr>
-                        <td><img style="width: 100px;height: 100px" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
-                        <td><img style="width: 100px;height: 100px" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
-                        <td><img style="width: 100px;height: 100px" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img  style=" float: left;width: 150px;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img  style=" float: left;width: 150px;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img style=" float:left;width:  77.8%;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
                     </tr>
                     <tr>
-                        <td><img style="width: 100px;height: 100px" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
-                        <td><img style="width: 100px;height: 100px" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
-                        <td><img style="width: 100px;height: 100px" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img  style=" float: left;width: 150px;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img  style=" float: left;width: 150px;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img style=" float:left;width:  77.8%;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div style="background: #e4e6eb; border-radius: 20px" class="profile-panel-left-down">
+                <h3 style="margin-top: 50px;margin-left: 20px">Bạn bè</h3>
+                <table style="margin-left: 30px;width: 500px;height: 500px;border-radius: 10px">
+                    <tr>
+                        <td><img  style=" float: left;width: 150px;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img style="float: left;width: 150px;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img style=" float:left;width:  77.8%;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                    </tr>
+                    <tr>
+                        <td class="friend-profile">ádf</td>
+                        <td class="friend-profile">ádf</td>
+                        <td class="friend-profile">ádf</td>
+                    </tr>
+                    <tr>
+                        <td><img  style=" float: left;width: 150px;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img  style=" float: left;width: 150px;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img style=" float:left;width:  77.8%;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                    </tr>
+                    <tr>
+                        <td class="friend-profile">ádf</td>
+                        <td class="friend-profile">ádf</td>
+                        <td class="friend-profile">ádf</td>
+                    </tr>
+                    <tr>
+                        <td><img  style=" float: left;width: 150px;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img  style=" float: left;width: 150px;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                        <td><img style=" float:left;width:  77.8%;height: auto" src="https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-Viet-Nam.jpg"></td>
+                    </tr>
+                    <tr>
+                        <td class="friend-profile">ádf</td>
+                        <td class="friend-profile">ádf</td>
+                        <td class="friend-profile">ádf</td>
                     </tr>
                 </table>
 
@@ -149,17 +195,23 @@
         </div>
     </div>
     <!--    het left-->
+<!--    cửa sổ xổ xuống-->
 
-    <div class="profile-main-right">
+
+<!--show menu-->
+
+
+
+    <div style="background: gray; border-radius: 20px" class="profile-main-right">
 
 
         <div class="post">
-            <div style="background: white;  display: flex" class="profile-panel-right">
+            <div style="background: white;   display: flex" class="profile-panel-right">
                 <div class="profile-panel-right-top">
                     <div style="display: flex"><h3><img style="width: 40px; height: 40px ; border-radius: 50pt"
                                                         src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/139542027_210401744121757_2003625589960416932_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=wSoY88YImCsAX-9NC0Z&_nc_ht=scontent-hkt1-1.xx&oh=00_AT-BafcLt7IMKSngoa26qSS0RF6Iqodu8o71g8V7sbI71Q&oe=630F8DB2">
                     </h3>
-                        <input style="width: 500px;margin-left: 10px; padding-left: 15px; border-radius: 30px"
+                        <input style="width: 450px;margin-left: 10px; padding-left: 15px; border-radius: 30px"
                                placeholder="ban dang nghi gi">
                     </div>
                     <br>
@@ -266,3 +318,13 @@
 </div>
 </body>
 </html>
+<script>
+    function show_more() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
