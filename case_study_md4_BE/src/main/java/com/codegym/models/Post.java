@@ -5,6 +5,8 @@ import lombok.Data;
 import javax.persistence.*;
 import java.sql.Date;
 
+import static java.time.LocalTime.now;
+
 @Entity
 @Data
 public class Post  {
