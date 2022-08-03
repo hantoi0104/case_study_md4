@@ -1,7 +1,5 @@
 package com.codegym.models;
-
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity

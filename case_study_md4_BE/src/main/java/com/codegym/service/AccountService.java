@@ -1,4 +1,2 @@
-package com.codegym.service;
-
-public class AccountService {
+package com.codegym.service;public class AccountService {
 }
