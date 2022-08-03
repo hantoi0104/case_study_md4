@@ -1,8 +1,8 @@
-package com.example.demo_spring_security.config.filter;
+package com.codegym.config.filter;
 
 
-import com.example.demo_spring_security.services.AppUserService;
-import com.example.demo_spring_security.services.JwtService;
+import com.codegym.service.AccountService;
+import com.codegym.service.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,7 +23,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private JwtService jwtService;
 
     @Autowired
-    private AppUserService userService;
+    private AccountService accountService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -31,9 +31,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             String token = getTokenFromRequest(request);
             if (token != null) {
                 // lấy username trong token
-                String username = jwtService.getUserNameFromJwtToken(token);
+                String username = jwtService.getEmailFromJwtToken(token);
                 // lấy ra UserDetails thông qua username
-                UserDetails userDetails = userService.loadUserByUsername(username);
+                UserDetails userDetails = accountService.loadUserByUsername(username);
 
                 // thực hiện việc xắc thực thông qua token.
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
