@@ -22,3 +22,22 @@ function del_img(){
     image.style.display="none"
 
 }
+
+
+function uploadFile() {
+    if (link.files[0] == undefined) {
+        return;
+    }
+    let formData = new FormData();
+    formData.append("file", link.files[0]);
+    $.ajax({
+        contentType: false,
+        processData: false,
+        type: "POST",
+        data: formData,
+        url: "http://localhost:8080/upfile",
+        success: function (data) {
+            create(data);
+        }
+    });
+}

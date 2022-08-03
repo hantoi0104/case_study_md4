@@ -10,7 +10,7 @@ $(document).ready(function () {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                url: "http://localhost:8080/api/user",
+                url: "http://localhost:8080/login",
                 data: JSON.stringify(user),
                 //xử lý khi thành công
                 success: function (data) {
