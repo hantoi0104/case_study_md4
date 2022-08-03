@@ -14,7 +14,7 @@ html {
     display: flex;
     justify-content: center;
 }
-.container-login {
+.container-login , .container-register {
     width: 360px;
     min-height: 100px;
     padding: 32px 24px;
@@ -25,7 +25,7 @@ html {
     align-self: center;
     box-shadow: 0 2px 5px 0 rgba(51,62,73,.1);
 }
-.container-login .heading {
+.container-login .heading, .container-register .heading {
     font-size: 2rem;
 }
 .container-login .desc {
@@ -83,7 +83,7 @@ html {
     padding: 4px 0 0;
 }
 
-.form-submit-login {
+.form-submit-login, .form-submit-register {
     outline: none;
     background-color: #d90000;
     margin-top: 12px;
