@@ -8,7 +8,6 @@ function open_chat_one_one() {
         document.querySelector(".nav-right-window-chat").style.display = "none";
         is_show_chat_one_one = true;
     }
-
 }
 
 function close_chat_one_one() {
@@ -16,7 +15,7 @@ function close_chat_one_one() {
 }
 
 function create_Message(){
-    let message={};
+    let message = {};
 }
 
 

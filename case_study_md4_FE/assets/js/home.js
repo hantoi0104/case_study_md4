@@ -1,16 +1,3 @@
-let id = prompt("Nhap id tai khoan:");
-let account ={};
-if(id == 1){
-    account.email ="hantoi@gmail.com";
-    account.password ="1111";
-}
-else {
-    account.email ="lananh@gmail.com";
-    account.password ="1111";
-}
-console.log(account)
-// enter account
-
 let is_show = false;
 let is_reply = false
 let is_show_chat =false;
