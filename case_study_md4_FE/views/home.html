@@ -350,18 +350,7 @@
                     <span>Feeling/Activity</span>
                 </div>
             </div>
-            <div class="container-create-post">
-                <div class="top-create-post">
-                    <div></div>
-                    <div style="margin-top: 7px">
-                        <span> Tạo bài viết</span>
-                    </div>
-                    <div onclick="close_post()">
-                        <i class="fas fa-window-close" style="color: #d00000; padding: 20px 20px 20px 20px; font-size: 18px"></i>
-                    </div>
-                </div>
 
-            </div>
 
         </div>
 
@@ -498,7 +487,73 @@
         </div>
     </div>
 </div>
+<div class="container-create-post" >
+    <div class="top-create-post">
+        <div></div>
+        <div style="margin-top: 7px">
+            <span> Tạo bài viết</span>
+        </div>
+        <div onclick="close_create_post()">
+            <i class="fas fa-window-close" style="color: #d00000; padding: 20px 20px 20px 20px; font-size: 18px"></i>
+        </div>
+    </div>
+    <div class="body-create-post" >
+        <div id="acc-info">
+            <div class='dp' >
+                <img width="100%"  src="../assets/img/girl.jpg" alt="">
+            </div>
+            <div style="padding-left:15px ;width: 150px;height: 50px;margin: 6px">
+                <h5 style="padding-bottom: 5px">Hoàng Công Hậu</h5>
+                <select id="selectpermision" style="min-width: 50px">
+                    <option class="option">Bạn bè</option>
+                    <option class="option">Chỉ mình tôi</option>
+                    <option class="option">Công khai</option>
+                </select>
+            </div>
+        </div>
+        <div style="overflow: auto;width: auto;height: 180px" >
+            <div>
+                <textarea  style="height: 100px;width: 100%" placeholder="Hậu ơi bạn đang nghĩ gì ?"></textarea>
+            </div>
+             <div id="img" style=" display: none; justify-content: space-between">
+                 <img style="width: 300px;height: auto;margin: auto" id="image" src=""  alt="">
+
+                 <div onclick="del_img()">
+                     <i class="fas fa-window-close" style="color: gray; padding: 20px 20px 20px 20px; font-size: 18px"></i>
+                 </div>
+             </div>
+        </div>
+        <div  style="    display: flex;
+                        justify-content: left;
+                        width: auto;
+                        height: 40px;
+                        border: black 1px solid;
+                        padding: 10px;
+                        border-radius: 10px;
+                        margin-top: 10px;
+                    ">
+            <h5 style="padding-right: 10px">Thêm vào bài viết của bạn</h5>
+            <div class="action">
+                <label for="inputFile"><i style="color: red" class="fa fa-image"></i>
+                    <span style="color: red" >Photo/Video</span></label>
+                <input type="file" id="inputFile" onchange="choosefile(this)"  hidden >
+                <input type="file" id="duphong"  hidden>
+
+            </div>
+        </div>
+        <button style="     width: 520px;
+                            margin-top: 10px;
+                            height: 25px;
+                            background-color: #3069D9;
+                            border-radius: 4px;" onclick="log1()"
+        >Đăng</button>
+    </div>
+</div>
+<div class='color-body-create-post' style="display: none" onclick="close_create_post()" id="manche"></div>
 <script src="../assets/js/home.js"></script>
+<script src="../assets/js/create_post.js"></script>
+<script src="../assets/js/uploadFile.js"></script>
+
 </body>
 
 </html>

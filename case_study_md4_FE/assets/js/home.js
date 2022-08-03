@@ -41,28 +41,17 @@ function close_chat(){
 
 // Open create post
 function open_create_post(){
-
-    if(is_show_create_post) {
-        document.querySelector(".container-create-post").style.display = "none";
-        is_show_create_post = false;
-    }
-    else{
         document.querySelector(".container-create-post").style.display = "block";
-        $("body").append("<div class='color-body-create-post'></div>")
-        is_show_create_post = true;
-    }
+        document.getElementById("manche").style.display="block"
+        document.body.style.overflowY="hidden"
 }
 
 // close create post
-function close_post() {
-    if (is_show_create_post) {
-        document.querySelector(".container-create-post").style.display = "block";
-        is_show_create_post = false;
-    } else {
+function close_create_post() {
         document.querySelector(".container-create-post").style.display = "none";
-        document.querySelector(".color-body-create-post").style.display = "none";
-        is_show_create_post = true;
-    }
+        document.getElementById("manche").style.display="none";
+        document.body.style.overflowY="scroll"
+
 
 }
 

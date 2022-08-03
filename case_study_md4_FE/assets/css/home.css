@@ -369,10 +369,11 @@ window-chat-top .search-message {
     height: 428px;
     border-radius: 10px;
     background-color: #ffffff;
-    position: absolute;
+    position: fixed;
     display: none;
-    left: 480px;
-    top: 180px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     z-index: 2000;
 }
 
@@ -382,7 +383,28 @@ window-chat-top .search-message {
     margin: 5px 5px 5px 5px ;
     border-bottom: 1px solid #d7d7d7;
 }
+#acc-info{
+    display: flex;
+    justify-content: left;
+}
 
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border:none;
+    font-size: 16px;
+    resize: none;
+}
+
+.body-create-post{
+    display: block;
+    justify-content: left;
+    height: 60px;
+    padding: 10px;
+    margin: 10px;
+}
 .top-create-post div span{
     font-size: 17px;
     font-weight: bold;
@@ -396,16 +418,17 @@ window-chat-top .search-message {
     padding: 10px;
     margin: 10px;
 }
-
+#selectpermision,.option{
+    font-size: 16px;
+}
 .post .post-top {
     display: flex;
     align-items: center;
     padding: 10px;
 }
-
-.post .post-top .dp {
-    width: 40px;
-    height: 40px;
+.dp {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -696,6 +719,6 @@ window-chat-top .search-message {
     background-color: rgba(51, 51, 51, 0.76);
     top: 0px;
     width: 100%;
-    height: 100%;
+    height: 200%;
     z-index: 1000;
 }
