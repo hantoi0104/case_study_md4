@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Home</title>
     <meta charset="UTF-8">
+    <title>Group</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
           integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/group.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>MediaBook</title>
-</head>
 
+    <!--    <title>MediaBook</title>-->
+</head>
 <body>
 <nav>
     <div class="nav-left">
@@ -208,64 +207,35 @@
 
     </div>
 </nav>
-
-
 <div class="container">
-
     <div class="left-panel">
-
-        <div class="result-search">
-            <p style="margin: 15px; font-size: 14px; font-weight: normal">Kết quả tìm kiếm</p>
-
-        </div>
         <ul>
             <li>
+                <span></span>
+                <h2>Nhóm</h2>
+            </li>
+            <li>
+                <span></span>
+                <button class="btn-create-group"><a href="creategroup.html">+ Tạo nhóm mới</a></button>
+            </li>
+            <li>
+                <hr >
+            </li>
+            <li>
                 <span class="profile"></span>
-                <p>Hán Văn Tới</p>
+                <p>Nhóm bạn đã tham gia</p>
             </li>
             <li>
-                <i class="fa fa-user-friends"></i>
-                <p>Friends</p>
+                <span class="fa fa-user-friends"></span>
+                <p>Nhóm C0322G1</p>
             </li>
             <li>
-                <i class="fa fa-play-circle"></i>
-                <p>Videos</p>
+                <span class="fa fa-user-friends"></span>
+                <p>Nhóm C0622G1</p>
             </li>
             <li>
-                <i class="fa fa-flag"></i>
-                <p>Pages</p>
-            </li>
-            <li>
-                <i class="fa fa-users"></i>
-                <a href="group.html"><p>Groups</p></a>
-            </li>
-            <li>
-                <i class="fa fa-bookmark"></i>
-                <p>Bookmark</p>
-            </li>
-            <li>
-                <i class="fab fa-facebook-messenger"></i>
-                <p>Inbox</p>
-            </li>
-            <li>
-                <i class="fas fa-calendar-week"></i>
-                <p>Events</p>
-            </li>
-            <li>
-                <i class="fa fa-bullhorn"></i>
-                <p>Ads</p>
-            </li>
-            <li>
-                <i class="fas fa-hands-helping"></i>
-                <p>Offers</p>
-            </li>
-            <li>
-                <i class="fas fa-briefcase"></i>
-                <p>Jobs</p>
-            </li>
-            <li>
-                <i class="fa fa-star"></i>
-                <p>Favourites</p>
+                <span class="fa fa-user-friends"></span>
+                <p>Nhóm C0422G1</p>
             </li>
         </ul>
 
@@ -276,7 +246,6 @@
             <a href="#">More</a>
         </div>
     </div>
-
 
     <div class="middle-panel">
 
@@ -357,7 +326,8 @@
                         <span> Tạo bài viết</span>
                     </div>
                     <div onclick="close_post()">
-                        <i class="fas fa-window-close" style="color: #d00000; padding: 20px 20px 20px 20px; font-size: 18px"></i>
+                        <i class="fas fa-window-close"
+                           style="color: #d00000; padding: 20px 20px 20px 20px; font-size: 18px"></i>
                     </div>
                 </div>
 
@@ -453,7 +423,6 @@
         </c:forEach>
     </div>
 
-
     <div class="right-panel">
         <div class="pages-section">
             <h4>Your pages</h4>
@@ -499,6 +468,6 @@
     </div>
 </div>
 <script src="../assets/js/home.js"></script>
-</body>
 
+</body>
 </html>

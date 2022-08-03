@@ -1,3 +1,15 @@
+.btn-create-group{
+    width: 300px;
+    height: 35px;
+    color: white;
+    background-color: mediumpurple;
+    border: #d7d7d7;
+    border-radius: 15px;
+    font-size: 18px;
+}
+.btn-create-group a{
+    text-decoration: none
+}
 * {
     margin: 0;
     padding: 0;
@@ -217,17 +229,22 @@ window-chat-top .search-message {
     display: flex;
 }
 
+.container .left-panel hr{
+    width:100%;
+    text-align:left;
+    margin-left:0;
+}
+
 .container .left-panel, .container .right-panel {
     position: sticky;
     top: 70px;
-    width: 250px;
+    width: 350px;
     height: calc(100vh - 70px);
 }
 
 .container .left-panel ul {
     padding: 10px 0px;
 }
-
 
 .container .left-panel ul li {
     list-style: none;
@@ -237,10 +254,6 @@ window-chat-top .search-message {
     transition: .3s;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.container .left-panel ul li a{
-    text-decoration: none
 }
 
 .container .left-panel ul li:hover {
