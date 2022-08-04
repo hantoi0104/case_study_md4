@@ -232,19 +232,36 @@
 <!--                <p>Nhóm C0322G1</p>-->
 <!--            </li>-->
         </ul>
-        <input style="height: 50px; width: 360px; margin: 10px;border-radius: 15px;padding: 12px 20px;" placeholder="Tên nhóm">
-        <select style="height: 50px; width: 360px; margin: 10px;border-radius: 15px;padding: 12px 20px;" placeholder="Chọn quyền riêng tư">
+        <div></div>
+<!--        Thẻ Input nhập tên group-->
+        <input id="groupName" style="height: 50px; width: 360px; margin: 10px;border-radius: 25px;padding: 12px 20px;" placeholder="Tên nhóm">
+
+<!--        Thẻ Select nhập lựa chọn-->
+        <select style="height: 50px; width: 360px; margin: 10px;border-radius: 25px;padding: 12px 20px;" placeholder="Chọn quyền riêng tư">
             <option>Công Khai</option>
             <option>Riêng Tư</option>
         </select>
-        <input style="height: 50px; width: 360px; margin: 10px;border-radius: 15px;padding: 12px 20px;" placeholder="Mời bạn bè (không bắt buộc)">
 
+<!--        Thẻ Input không bắt buộc-->
+        <input style="height: 50px; width: 360px; margin: 10px;border-radius: 25px;padding: 12px 20px;" placeholder="Mời bạn bè (không bắt buộc)">
+
+<!--        Thẻ Input up file ảnh-->
+<!--        <input id="img" type="file">-->
+        <div style="text-align:center;padding:3%;border-radius: 25px;border:thin solid black;width: 360px; margin: 10px;margin-top: 50px">
+            <label>Select Image <br/><br>
+                <input id="img" type="file"     >
+            </label>
+        </div>
 
         <div class="footer-links">
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
             <a href="#">Advance</a>
             <a href="#">More</a>
+        </div>
+
+        <div style="margin-top: 150px">
+            <button onclick="" style="height: 60px; width: 300px; margin: 50px;border-radius: 7px; background-color: dodgerblue">Create</button>
         </div>
     </div>
 
