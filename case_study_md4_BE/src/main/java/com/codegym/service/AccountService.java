@@ -18,4 +18,8 @@ public class AccountService implements UserDetailsService {
        Account account = iAccountRepository.findByEmail(username);
        return  new User(account.getEmail(), account.getPassWord(), account.getRoles());
     }
+
+    public Account findByEmail(String email){
+        return iAccountRepository.findByEmail(email);
+    }
 }
