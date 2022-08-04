@@ -1,13 +1,8 @@
-
-
-let token = localStorage.getItem("token");
-let info_token = parseJwt (token);
-console.log(info_token)
 let stopClient = null;
 let Account = null;
 
-function connect(){
-    let socket = new WebSocket('ws://localhost:8081/socket/websocket');
+function connect_Socket(account){
+    let socket = new WebSocket('ws://localhost:8080/socket/websocket');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);

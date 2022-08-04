@@ -295,13 +295,12 @@ window-chat-top .search-message {
     justify-content: space-around;
     border: none;
     border-radius: 20px;
-    width: 220px;
+    width: 200px;
     background-color: #efefef;
     box-sizing: border-box;
     padding: 0px 5px 0px 5px;
     height: 80%;
-    margin-top: 5px;
-    margin-right: 5px;
+    margin: 5px 5px 0px -10px;
 }
 
 .send-message-input input{
@@ -310,7 +309,7 @@ window-chat-top .search-message {
     background-color: transparent;
     border: none;
     width: 85%;
-  margin-top: 5px;
+    margin-top: 5px;
 
 }
 .chat-one-one-bottom-right i{
@@ -327,18 +326,18 @@ window-chat-top .search-message {
 
 .send-message-button{
     text-align: center;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border-radius: 5px;
     background-color: #1b74e4;
     color: white;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .send-message-button p{
     margin-top: 8px;
     font-family: Roboto;
-    font-size: 14px;;
+    font-size: 13px;;
 }
 
 
