@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../assets/css/home.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>MediaBook</title>
+    <script src="../assets/js/message.js"></script>
 </head>
 
 <body>
@@ -85,7 +86,9 @@
 
             <div class="window-chat-main">
 
-                <a class="friend-chat" href="#">
+<!--start show friend chat-->
+
+                <a class="friend-chat" href="#" onclick="open_chat_one_one()">
                     <div class="item-friend">
                         <img src="../assets/img/avarta.jpg" alt="">
                         <div>
@@ -96,114 +99,30 @@
                             <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
                         </div>
                     </div>
-
                 </a>
 
-                <a class="friend-chat" href="#">
-                    <div class="item-friend">
-                        <img src="../assets/img/avarta.jpg" alt="">
-                        <div>
-                            <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
-                            <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
-                        </div>
-                        <div class="icon-edit-chat">
-                            <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
-                        </div>
-                    </div>
-
-                </a>
-
-                <a class="friend-chat" href="#">
-                    <div class="item-friend">
-                        <img src="../assets/img/avarta.jpg" alt="">
-                        <div>
-                            <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
-                            <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
-                        </div>
-                        <div class="icon-edit-chat">
-                            <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
-                        </div>
-
-                    </div>
-                </a>
-
-                <a class="friend-chat" href="#">
-                    <div class="item-friend">
-                        <img src="../assets/img/avarta.jpg" alt="">
-                        <div>
-                            <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
-                            <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
-                        </div>
-                        <div class="icon-edit-chat">
-                            <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
-                        </div>
-
-                    </div>
-                </a>
-
-                <a class="friend-chat" href="#">
-                    <div class="item-friend">
-                        <img src="../assets/img/avarta.jpg" alt="">
-                        <div>
-                            <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
-                            <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
-                        </div>
-                        <div class="icon-edit-chat">
-                            <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
-                        </div>
-
-                    </div>
-                </a>
-
-
-                <a class="friend-chat" href="#">
-                    <div class="item-friend">
-                        <img src="../assets/img/avarta.jpg" alt="">
-                        <div>
-                            <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
-                            <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
-                        </div>
-                        <div class="icon-edit-chat">
-                            <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
-                        </div>
-
-                    </div>
-
-                </a>
-
-                <a class="friend-chat" href="#">
-                    <div class="item-friend">
-                        <img src="../assets/img/avarta.jpg" alt="">
-                        <div>
-                            <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
-                            <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
-                        </div>
-                        <div class="icon-edit-chat">
-                            <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
-                        </div>
-
-                    </div>
-
-                </a>
-
-                <a class="friend-chat" href="#">
-                    <div class="item-friend">
-                        <img src="../assets/img/avarta.jpg" alt="">
-                        <div>
-                            <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
-                            <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
-                        </div>
-                        <div class="icon-edit-chat">
-                            <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
-                        </div>
-
-                    </div>
-
-                </a>
-
-
+<!--                End show friend chat-->
             </div>
 
+        </div>
+
+        <div class="nav-right-window-chat-one-one">
+            <div class="chat-one-one-top">
+                <div class="info-chat-one">
+                    <img src="../assets/img/avarta.jpg" alt="">
+                    <div>
+                        <p style="width: 100px; font-size: 17px; margin:5px 0px 0px 10px"> Han Toi</p>
+                        <p style="width: 250px; font-size: 12px; margin:5px 0px 0px 10px"> Hoạt động 4 giờ trước</p>
+                    </div>
+                </div>
+                <div class="action-chat-one">
+                    <i class="fas fa-video"></i>
+                    <i class="fas fa-phone-alt"></i>
+                    <i class="fas fa-window-close" onclick="close_chat_one_one()"></i>
+                </div>
+            </div>
+            <div class="chat-one-one-middle"> </div>
+            <div class="chat-one-one-bottom"> </div>
         </div>
 
     </div>
@@ -219,7 +138,7 @@
 
         </div>
         <ul>
-            <li>
+            <li onclick="location.href='profile.html'">
                 <span class="profile"></span>
                 <p>Hán Văn Tới</p>
             </li>

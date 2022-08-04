@@ -21,8 +21,7 @@ public class LoginAPI {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-
-    @PostMapping("/login")
+    @PostMapping("/api/login")
     public String login(@RequestBody Account account){
         try {
             // Tạo ra 1 đối tượng Authentication.
