@@ -2,7 +2,7 @@ let is_show = false;
 let is_reply = false
 let is_show_chat =false;
 let is_show_create_post = false;
-let is_show_chat_one_one =false;
+let is_show_chat_one_one = false;
 function show_comment(){
     if(is_show) {
         document.querySelector(".container-comment").style.display = "none";
@@ -65,6 +65,9 @@ function close_post() {
         is_show_create_post = true;
     }
 }
+
+
+//chat one to one
 
 
 // load friend
