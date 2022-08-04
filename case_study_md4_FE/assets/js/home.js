@@ -2,7 +2,7 @@ let is_show = false;
 let is_reply = false
 let is_show_chat =false;
 let is_show_create_post = false;
-let is_show_chat_one_one =false;
+let is_show_chat_one_one = false;
 function show_comment(){
     if(is_show) {
         document.querySelector(".container-comment").style.display = "none";
@@ -42,17 +42,33 @@ function close_chat(){
 
 // Open create post
 function open_create_post(){
+
+    if(is_show_create_post) {
+        document.querySelector(".container-create-post").style.display = "none";
+        is_show_create_post = false;
+    }
+    else{
         document.querySelector(".container-create-post").style.display = "block";
-        document.getElementById("manche").style.display="block"
-        document.body.style.overflowY="hidden"
+        $("body").append("<div class='color-body-create-post'></div>")
+        is_show_create_post = true;
+    }
 }
 
 // close create post
-function close_create_post() {
-    document.querySelector(".container-create-post").style.display = "none";
-    document.getElementById("manche").style.display = "none";
-    document.body.style.overflowY = "scroll"
+function close_post() {
+    if (is_show_create_post) {
+        document.querySelector(".container-create-post").style.display = "block";
+        is_show_create_post = false;
+    } else {
+        document.querySelector(".container-create-post").style.display = "none";
+        document.querySelector(".color-body-create-post").style.display = "none";
+        is_show_create_post = true;
+    }
 }
+
+
+//chat one to one
+
 
 // load friend
 function getFriend() {
@@ -73,5 +89,6 @@ function getFriend() {
         }
     })
 }
+
 
 
