@@ -22,4 +22,7 @@ public class AccountService implements UserDetailsService {
     public Account findByEmail(String email){
         return iAccountRepository.findByEmail(email);
     }
+    public Account save(Account account){
+        return iAccountRepository.save(account);
+    }
 }

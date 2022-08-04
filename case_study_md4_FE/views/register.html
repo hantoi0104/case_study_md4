@@ -4,45 +4,49 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../assets/css/register.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 <div class="main">
     <div class="container-register">
-        <form action="" method="POST" class="form" id="form-1">
-            <h3 class="heading">Thành viên đăng ký</h3>
-            <p class="desc">Facebook mạng xã hội chia sẻ ❤️</p>
 
-            <div class="spacer"></div>
+        <h3 class="heading" >Thành viên đăng ký</h3>
+        <p class="desc">Facebook mạng xã hội chia sẻ ❤️</p>
 
-            <div class="form-group">
-                <label for="fullname" class="form-label">Tên đầy đủ</label>
-                <input id="fullname" name="fullname" type="text" placeholder="User name" class="form-control">
-                <span class="form-message"></span>
-            </div>
+        <div class="spacer"></div>
 
-            <div class="form-group">
-                <label for="email" class="form-label">Email</label>
-                <input id="email" name="email" type="text" placeholder="Email@domain.com" class="form-control">
-                <span class="form-message"></span>
-            </div>
+        <div class="form-group">
+            <label for="fullname" class="form-label">Tên đầy đủ<span style="color: red;" id="errorName" class="form-message">(*)</span></label>
+            <input id="fullname" name="fullName" type="text" placeholder="Full Name" class="form-control">
 
-            <div class="form-group">
-                <label for="password" class="form-label">Mật khẩu</label>
-                <input id="password" name="password" type="password" placeholder="Password" class="form-control">
-                <span class="form-message"></span>
-            </div>
+        </div>
 
-            <div class="form-group">
-                <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
-                <input id="password_confirmation" name="password_confirmation" placeholder="Confirm password"
-                       type="password" class="form-control">
-                <span class="form-message"></span>
-            </div>
-            <button class="form-submit-register">Đăng ký</button>
-        </form>
+        <div class="form-group">
+            <label for="email" class="form-label">Email<span style="color: red;" id="erorEmail" class="form-message">(*)</span></label>
+            <input id="email" name="email" type="text" placeholder="Email@domain.com" class="form-control">
+
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="form-label">Mật khẩu<span style="color: red;" id="errorPass" class="form-message">(*)</span></label>
+            <input id="password" name="passWord" type="password" placeholder="Password" class="form-control">
+
+        </div>
+
+        <div class="form-group">
+            <label for="password_confirmation" class="form-label">Nhập lại mật khẩu <span style="color: red;" id="errorConPass" class="form-message">(*)</span></label>
+            <input id="password_confirmation" name="password_confirmation" placeholder="Confirm password"
+                   type="password" class="form-control" >
+
+        </div>
+        <button class="form-submit-register" onclick="FromValidate()">Đăng ký</button>
     </div>
 
 </div>
 <script src="../assets/js/login.js"></script>
+<script src="../assets/js/validate.js"></script>
+<script src="../assets/js/createAccount.js"> </script>
 </body>
 </html>
