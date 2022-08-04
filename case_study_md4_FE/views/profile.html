@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="../assets/css/profile.css">
     <title>MediaBook</title>
     <link rel="stylesheet" href="../assets/css/home.css">
+    <script src="../assets/js/home.js"></script>
+    <script src="../assets/js/message.js"></script>
+
 </head>
 
 <body>
@@ -31,7 +34,7 @@
         </form>
     </div>
     <div  class="nav-middle">
-        <a href="#" class="active">
+        <a href="home.html" class="active">
             <i class="fa fa-home"></i>
         </a>
 
@@ -48,21 +51,87 @@
         </a>
     </div>
 
-    <div class="nav-right">
-        <span class="profile"></span>
 
-        <a href="#">
-            <i class="fa fa-bell"></i>
-        </a>
+        <div class="nav-right">
+            <div class="nav-right-icon">
+                <span class="profile"></span>
 
-        <a href="#">
-            <div class="fas fa-ellipsis-h">
+                <a id="chat_icon" href="#">
+                    <i class="fas fa-comment-dots"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-bell"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fas fa-ellipsis-h"></i>
+                </a>
+            </div>
+
+            <div class="nav-right-window-chat">
+                <div class="window-chat-top">
+                    <div class="top-chat">
+                        <div style="width: 100px; margin-left: 5px"><h1>Chat</h1></div>
+                        <div class="top-icon">
+                            <a href="#"><i class="fas fa-ellipsis-h" style="font-size: 18px"></i></a>
+                            <a href="#"><i class="fa fa-bell" style="font-size: 18px"></i></a>
+                            <a href="#"><i class="fas fa-times-circle" style="font-size: 18px"
+                                           onclick="close_chat()"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="search-message">
+                        <input name="search" type="text" placeholder="Search Message..">
+                        <button type="submit" class="btn-search"
+                                style="margin-left: 10px; background-color: transparent; border-color: transparent">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="window-chat-main">
+
+                    <!--start show friend chat-->
+
+                    <a class="friend-chat" href="#" onclick="open_chat_one_one()">
+                        <div class="item-friend">
+                            <img src="../assets/img/avarta.jpg" alt="">
+                            <div>
+                                <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
+                                <p style="width: 250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
+                            </div>
+                            <div class="icon-edit-chat">
+                                <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--                End show friend chat-->
+                </div>
 
             </div>
 
-        </a>
-    </div>
-</nav>
+            <div class="nav-right-window-chat-one-one">
+                <div class="chat-one-one-top">
+                    <div class="info-chat-one">
+                        <img src="../assets/img/avarta.jpg" alt="">
+                        <div>
+                            <p style="width: 100px; font-size: 17px; margin:5px 0px 0px 10px"> Han Toi</p>
+                            <p style="width: 250px; font-size: 12px; margin:5px 0px 0px 10px"> Hoạt động 4 giờ trước</p>
+                        </div>
+                    </div>
+                    <div class="action-chat-one">
+                        <i class="fas fa-video"></i>
+                        <i class="fas fa-phone-alt"></i>
+                        <i class="fas fa-window-close" onclick="close_chat_one_one()"></i>
+                    </div>
+                </div>
+                <div class="chat-one-one-middle"> </div>
+                <div class="chat-one-one-bottom"> </div>
+            </div>
+
+        </div>
+    </nav>
 
 
 <div class="profile-top">
@@ -226,7 +295,7 @@
             </div>
             <div style="overflow: auto;width: auto;height: 180px" >
                 <div>
-                    <textarea  style="height: 100px;width: 100%" placeholder="Hậu ơi bạn đang nghĩ gì ?"></textarea>
+                    <textarea  style=" border-radius: 20px; height: 100px;width: 100%" placeholder="Hậu ơi bạn đang nghĩ gì ?"></textarea>
                 </div>
                 <div id="img" style=" display: none; justify-content: space-between">
                     <img style="width: 300px;height: auto;margin: auto" id="image" src=""  alt="">
@@ -396,9 +465,25 @@
         document.getElementById("manche").style.display="block"
         document.body.style.overflowY="hidden"
     }
+
     function close_create_post() {
         document.querySelector(".container-create-post").style.display = "none";
         document.getElementById("manche").style.display = "none";
         document.body.style.overflowY = "scroll"
     }
+    $('#chat_icon').click(function(){
+        if(is_show_chat) {
+            document.querySelector(".nav-right-window-chat").style.display = "none";
+            is_show_chat = false;
+        }
+        else{
+            document.querySelector(".nav-right-window-chat").style.display = "block";
+            is_show_chat = true;
+        }
+    });
+    // close message
+    function close_chat(){
+        document.querySelector(".nav-right-window-chat").style.display = "none";
+    }
+
 </script>
