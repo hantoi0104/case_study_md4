@@ -5,6 +5,8 @@ import lombok.Data;
 import javax.persistence.*;
 import java.sql.Date;
 
+import static java.time.LocalTime.now;
+
 @Entity
 @Data
 public class Post  {
@@ -13,9 +15,6 @@ public class Post  {
     private long id;
     @ManyToOne
     private Account account;
-
-    @ManyToOne
-    private Group parent;
 
     @Column(length = 10000000)
     private String content;

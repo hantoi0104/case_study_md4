@@ -3,19 +3,20 @@ package com.codegym.models;
 import lombok.Data;
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
+@Table(name = "groupsss")
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  long id;
     @ManyToOne
-    private Account admin;
+    private Account acc_admin;
     private String groupName;
     @ManyToMany(fetch = FetchType.EAGER)
-    private List<Account> account;
-    private String coverImg;
-    private Date createDay;
+    private Set<Account> accounts;
+    private String coverGroupImg;
+    private Date gCreate;
 }

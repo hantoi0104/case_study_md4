@@ -2,6 +2,7 @@ let is_show = false;
 let is_reply = false
 let is_show_chat =false;
 let is_show_create_post = false;
+let is_show_chat_one_one =false;
 function show_comment(){
     if(is_show) {
         document.querySelector(".container-comment").style.display = "none";
@@ -41,29 +42,36 @@ function close_chat(){
 
 // Open create post
 function open_create_post(){
-
-    if(is_show_create_post) {
-        document.querySelector(".container-create-post").style.display = "none";
-        is_show_create_post = false;
-    }
-    else{
         document.querySelector(".container-create-post").style.display = "block";
-        $("body").append("<div class='color-body-create-post'></div>")
-        is_show_create_post = true;
-    }
+        document.getElementById("manche").style.display="block"
+        document.body.style.overflowY="hidden"
 }
 
 // close create post
-function close_post() {
-    if (is_show_create_post) {
-        document.querySelector(".container-create-post").style.display = "block";
-        is_show_create_post = false;
-    } else {
-        document.querySelector(".container-create-post").style.display = "none";
-        document.querySelector(".color-body-create-post").style.display = "none";
-        is_show_create_post = true;
-    }
+function close_create_post() {
+    document.querySelector(".container-create-post").style.display = "none";
+    document.getElementById("manche").style.display = "none";
+    document.body.style.overflowY = "scroll"
+}
 
+// load friend
+function getFriend() {
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        url: "http://localhost:8080/friend",
+        //xử lý khi thành công
+        success: function (data) {
+            console.log("data")
+            console.log(data)
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    })
 }
 
 

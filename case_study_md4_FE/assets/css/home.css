@@ -212,6 +212,55 @@ window-chat-top .search-message {
     border-radius: 50%;
 }
 
+
+.nav-right-window-chat-one-one{
+    width: 350px;
+    height: 400px;
+    display: block;
+    background-color: #ffffff;
+    position: absolute;
+    top: 350px;
+    right: 100px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.chat-one-one-top{
+    box-sizing: border-box;
+    padding: 5px 5px 5px 5px ;
+    display: flex;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.info-chat-one{
+    width: 250px;
+    display: flex;
+}
+
+.info-chat-one img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.action-chat-one{
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+    margin-top: 8px;
+}
+.action-chat-one i {
+    color: #0076e7;
+    border-radius: 2px;
+}
+
+.chat-one-one-middle{
+
+}
+.chat-one-one-bottom{
+
+}
+
+
 .container {
     background: #eee;
     display: flex;
@@ -369,10 +418,11 @@ window-chat-top .search-message {
     height: 428px;
     border-radius: 10px;
     background-color: #ffffff;
-    position: absolute;
+    position: fixed;
     display: none;
-    left: 480px;
-    top: 180px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     z-index: 2000;
 }
 
@@ -382,7 +432,28 @@ window-chat-top .search-message {
     margin: 5px 5px 5px 5px ;
     border-bottom: 1px solid #d7d7d7;
 }
+#acc-info{
+    display: flex;
+    justify-content: left;
+}
 
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border:none;
+    font-size: 16px;
+    resize: none;
+}
+
+.body-create-post{
+    display: block;
+    justify-content: left;
+    height: 60px;
+    padding: 10px;
+    margin: 10px;
+}
 .top-create-post div span{
     font-size: 17px;
     font-weight: bold;
@@ -396,16 +467,17 @@ window-chat-top .search-message {
     padding: 10px;
     margin: 10px;
 }
-
+#selectpermision,.option{
+    font-size: 16px;
+}
 .post .post-top {
     display: flex;
     align-items: center;
     padding: 10px;
 }
-
-.post .post-top .dp {
-    width: 40px;
-    height: 40px;
+.dp {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -696,6 +768,6 @@ window-chat-top .search-message {
     background-color: rgba(51, 51, 51, 0.76);
     top: 0px;
     width: 100%;
-    height: 100%;
+    height: 200%;
     z-index: 1000;
 }
