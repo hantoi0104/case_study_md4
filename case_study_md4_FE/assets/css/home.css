@@ -212,6 +212,55 @@ window-chat-top .search-message {
     border-radius: 50%;
 }
 
+
+.nav-right-window-chat-one-one{
+    width: 350px;
+    height: 400px;
+    display: block;
+    background-color: #ffffff;
+    position: absolute;
+    top: 350px;
+    right: 100px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.chat-one-one-top{
+    box-sizing: border-box;
+    padding: 5px 5px 5px 5px ;
+    display: flex;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.info-chat-one{
+    width: 250px;
+    display: flex;
+}
+
+.info-chat-one img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.action-chat-one{
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+    margin-top: 8px;
+}
+.action-chat-one i {
+    color: #0076e7;
+    border-radius: 2px;
+}
+
+.chat-one-one-middle{
+
+}
+.chat-one-one-bottom{
+
+}
+
+
 .container {
     background: #eee;
     display: flex;
