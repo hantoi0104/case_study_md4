@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5045254-9ad7-4df9-999d-af9be50f52c8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/case_study_md4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/case_study_md4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study_md4_FE/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_md4_FE/views/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study_md4_BE/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_md4_BE/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study_md4_FE/assets/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_md4_FE/assets/css/profile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case_study_md4_FE/views/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_md4_FE/views/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,12 +46,22 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/case_study_md4_BE" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="CaseStudyMd4Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="case_study_md4.main" />
+      <module name="case_study_md4" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.codegym.CaseStudyMd4Application" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -65,6 +78,8 @@
       <workItem from="1659431328599" duration="165000" />
       <workItem from="1659431602066" duration="614000" />
       <workItem from="1659577508035" duration="1814000" />
+      <workItem from="1659601244399" duration="545000" />
+      <workItem from="1659621181322" duration="616000" />
     </task>
     <servers />
   </component>

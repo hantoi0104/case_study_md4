@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../assets/css/home.css">
     <script src="../assets/js/home.js"></script>
     <script src="../assets/js/message.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 
@@ -132,6 +133,45 @@
 
         </div>
     </nav>
+<!--    show edit-->
+<div  class="show-edit" style=" border-radius: 20px;border:black;display: none;background: #c6c6ce ; z-index: 5000; position: fixed; margin-left: 800px;margin-top: 300px">
+    <div  class=" show-edit-header">
+        <div      class="show-edit-body">
+            <div style="margin-left: 60px;margin-top: 30px">
+                <h2>Edit profile</h2>
+            </div>
+            <div style="margin-left: 200px" onclick="close_edit()">
+
+                <i class="fas fa-window-close" style="color: #d00000; padding: 20px 20px 20px 20px; font-size: 18px"></i>
+            </div>
+            <div style=" justify-content: space-between; display: flex;margin: .5rem">
+
+                <label>Name</label>
+                <input style="text-align: left" type="text" required>
+            </div>
+            <div style=" justify-content: space-between; display: flex;margin: .5rem">
+                <label>Email</label>
+                <input type="text" required>
+            </div>
+            <div style=" justify-content: space-between; display: flex;margin: .5rem">
+                <label>Address</label>
+                <input type="text" required>
+            </div>
+            <div style=" justify-content: space-between; display: flex;margin: .5rem">
+                <label>Phone</label>
+                <input type="text" required>
+            </div>
+            <div style="margin-left: 150px">
+                <td>
+                    <tr> <button>save</button> </tr>
+                    <tr> <button>edit</button> </tr>
+                </td>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 <div class="profile-top">
@@ -141,7 +181,7 @@
 
             <div class="edit-cover" id="editCover">
                 <i class="fas fa-camera" style="margin-top: 10px"></i>
-                <p style="margin-top: 10px; font-size: 14px; font-weight: bold">Chỉnh sửa ảnh bìa</p>
+                <p  style="margin-top: 10px; font-size: 14px; font-weight: bold">Chỉnh sửa ảnh bìa</p>
             </div>
         </div>
     </div>
@@ -160,12 +200,13 @@
                 <i class="fas fa-plus-circle"></i>
                 <span>Thêm vào tin</span>
             </div>
-            <div class="right-info-edit">
+            <div onclick="show_edit()" class="right-info-edit">
                 <i class="fas fa-pen"></i>
                 <span>Chỉnh sửa trang cá nhân</span>
             </div>
         </div>
     </div>
+
     <div class="container-menu">
 
         <ul>
@@ -178,8 +219,8 @@
             <li class="dropdown">
                 <button style=" font-size: 15px ;border: none ;border-radius: 5px ; background: #bdb7b7">Xem thêm</button>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
+                    <a href="#">Edit profile</a>
+                    <a href="#">Doi</a>
                     <a href="#">Link 3</a>
                 </div>
             </li>
@@ -275,7 +316,7 @@
             <div style="margin-top: 7px">
                 <span> Tạo bài viết</span>
             </div>
-            <div onclick="close_create_post()">
+            <div onclick="close_edit()">
                 <i class="fas fa-window-close" style="color: #d00000; padding: 20px 20px 20px 20px; font-size: 18px"></i>
             </div>
         </div>
@@ -471,6 +512,17 @@
         document.getElementById("manche").style.display = "none";
         document.body.style.overflowY = "scroll"
     }
+    function show_edit(){
+        document.querySelector(".show-edit").style.display = "block";
+        document.getElementById("manche").style.display="block"
+        document.body.style.overflowY="hiddent"
+    }
+    function close_edit() {
+        document.querySelector(".show-edit").style.display = "none";
+        document.getElementById("manche").style.display = "none";
+        document.body.style.overflowY = "scroll"
+    }
+
     $('#chat_icon').click(function(){
         if(is_show_chat) {
             document.querySelector(".nav-right-window-chat").style.display = "none";
