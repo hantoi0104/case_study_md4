@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5810b6f-0ba5-4030-8dff-2c9b046f30a5" name="Changes" comment="" />
+    <list default="true" id="f5045254-9ad7-4df9-999d-af9be50f52c8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/case_study_md4_FE/views/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_md4_FE/views/profile.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,20 +40,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/hauhc1203/Desktop/case_study_md4/case_study_md4_BE",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "1c1fdc181804b78463d25ea8d8d7ed89"
-  }
-}]]></component>
   <component name="RunManager">
     <configuration name="CaseStudyMd4Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="case_study_md4.main" />
@@ -76,5 +64,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
