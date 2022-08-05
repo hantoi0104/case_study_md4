@@ -18,8 +18,8 @@ public class Group {
     private String groupName;
     private String status;
     private String coverGroupImg;
-    //    private Date gCreate;
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Basic(optional = false)
+    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable = false, updatable = false)
     private java.sql.Timestamp gCreate;
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Account> accounts;
