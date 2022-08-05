@@ -17,7 +17,6 @@ function close_chat_one_one() {
 //chat one to one
 let token = localStorage.getItem("token");
 let info_token = parseJwt (token);
-console.log(info_token)
 let stopClient = null;
 let Account = null;
 

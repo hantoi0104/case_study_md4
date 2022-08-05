@@ -107,7 +107,7 @@
 
         </div>
 
-        <div class="nav-right-window-chat-one-one">
+        <div class="nav-right-window-chat-one-one" style="display: none">
             <div class="chat-one-one-top">
                 <div class="info-chat-one">
                     <img src="../assets/img/avarta.jpg" alt="">
@@ -141,7 +141,7 @@
         <ul>
             <li onclick="location.href='profile.html'">
                 <span class="profile"></span>
-                <p>Hán Văn Tới</p>
+                <p id="username"></p>
             </li>
             <li>
                 <i class="fa fa-user-friends"></i>
@@ -249,9 +249,9 @@
         <div class="post create">
             <div class="post-top">
                 <div class="dp">
-                    <img src="../assets/img/girl.jpg" alt="">
+                    <img src="" id="userIMG" alt="">
                 </div>
-                <input onclick="open_create_post()" type="text" placeholder="What's on your mind, Aashish ?"/>
+                <input onclick="open_create_post()" type="text" id="yourMind" placeholder="Bạn đang nghĩ gì thế ?"/>
             </div>
 
             <div class="post-bottom">
@@ -274,92 +274,10 @@
 
         </div>
 
-        <div class="post">
-            <div class="post-top">
-                <div class="dp">
-                    <img src="../assets/img/avarta.jpg" alt="">
-                </div>
-                <div class="post-info">
-                    <p class="name">Han Toi</p>
-                    <span class="time">2 days ago</span>
-                </div>
-                <i class="fas fa-ellipsis-h"></i>
-            </div>
+        <div class="post" id="timeLine">
 
-            <div class="post-content">
-                <p>Han Toi</p>
-                <img src="../assets/img/mountains.jpg"/>
-            </div>
-
-            <div class="container-post-bottom">
-                <div class="quantity-like-comment">
-                    <div class="quantity-like">
-                        <i class="fas fa-thumbs-up" style="color: #ffffff;
-                         background-color: #0076e7; font-size: 10px; border-radius: 50%; padding: 5px"></i>
-                        <span>4</span>
-                    </div>
-                    <div class="quantity-comment">
-                        <span>4</span>
-                        <span>bình luận</span>
-                    </div>
-                </div>
-                <div class="post-bottom">
-                    <div class="action">
-                        <i class="far fa-thumbs-up"></i>
-                        <span>Like</span>
-                    </div>
-                    <div class="action" onclick="show_comment()">
-                        <i class="far fa-comment"></i>
-                        <span>Comment</span>
-                    </div>
-                    <div class="action">
-                        <i class="fa fa-share"></i>
-                        <span>Share</span>
-                    </div>
-                </div>
-
-                <div style="display:none" class="container-comment">
-                    <form action=" " method="post">
-                        <div class="write-comment">
-                            <img width="30px" height="30px" src="../assets/img/avarta.jpg">
-                            <input name="massage" placeholder=" Viết bình luận ">
-                            <button type="submit">Send</button>
-                        </div>
-                    </form>
-
-                    <div class="all-comment">
-                        <div class="top-comment">
-                            <div>
-                                <img src="../assets/img/avarta.jpg">
-                            </div>
-                            <div class="content-comment">
-                                <p>Han Toi</p>
-                                <span> Mới mua mà dao bán rồi</span>
-                            </div>
-                        </div>
-
-                        <div class="bottom-comment" onclick="show_reply()">
-                            <span style="font-size: 14px; font-weight: normal; margin-left:400px">reply</span>
-                            <span style="font-size: 13px; font-weight: bold; ">10</span>
-                        </div>
-                        <div class="container-reply">
-                            <div class="top-reply">
-                                <div>
-                                    <img src="../assets/img/avarta.jpg">
-                                </div>
-                                <div class="content-reply">
-                                    <p>Han Toi</p>
-                                    <span> Mới mua mà dao bán rồi</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
         </div>
-        </c:forEach>
+<!--    end post-->
     </div>
 
 
@@ -420,10 +338,10 @@
     <div class="body-create-post" >
         <div id="acc-info">
             <div class='dp' >
-                <img width="100%"  src="../assets/img/girl.jpg" alt="">
+                <img id="imgCreateP" width="100%"  src="" alt="">
             </div>
             <div style="padding-left:15px ;width: 150px;height: 50px;margin: 6px">
-                <h5 style="padding-bottom: 5px">Hoàng Công Hậu</h5>
+                <h5 id="userCreateP" style="padding-bottom: 5px">Hoàng Công Hậu</h5>
                 <select id="selectpermision" style="min-width: 50px;border-radius: 5px">
                     <option class="option">Bạn bè</option>
                     <option class="option">Chỉ mình tôi</option>
@@ -433,7 +351,7 @@
         </div>
         <div style="overflow: auto;width: auto;height: 180px" >
             <div>
-                <textarea  style="height: 100px;width: 100%" placeholder="Hậu ơi bạn đang nghĩ gì ?"></textarea>
+                <textarea id="content" style="height: 100px;width: 100%" placeholder="Bạn đang nghĩ gì ?"></textarea>
             </div>
              <div id="img" style=" display: none; justify-content: space-between">
                  <img style="width: 300px;height: auto;margin: auto" id="image" src=""  alt="">
@@ -465,7 +383,7 @@
                             margin-top: 10px;
                             height: 25px;
                             background-color: #3069D9;
-                            border-radius: 4px;" onclick="createPost()"
+                            border-radius: 4px;" onclick="uploadFile()"
         >Đăng</button>
     </div>
 </div>
@@ -473,9 +391,12 @@
 <script src="../assets/js/home.js"></script>
 <script src="../assets/js/message.js"></script>
 <script src="../assets/js/ajax/homeAPI.js"></script>
-<script src="../assets/js/create_post.js"></script>
 <script src="../assets/js/uploadFile.js"></script>
 <script src="../assets/js/crudPost.js"></script>
+<script src="../assets/js/ajax/cmtAPI.js"></script>
+<script src="../assets/js/ajax/likeAPI.js"></script>
+
+<script src="../assets/js/ajax/postAPI.js"></script>
 
 
 </body>

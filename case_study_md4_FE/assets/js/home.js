@@ -3,26 +3,38 @@ let is_reply = false
 let is_show_chat =false;
 let is_show_create_post = false;
 let is_show_chat_one_one =false;
-function show_comment(){
-    if(is_show) {
-        document.querySelector(".container-comment").style.display = "none";
-        is_show = false;
+
+
+$('body').on('DOMMouseScroll', function(e){
+    if(e.originalEvent.detail < 0) {
+        console.log('up 2');
     }
-        else{
-        document.querySelector(".container-comment").style.display = "block";
-        is_show = true;
+    else {
+        console.log('down 2');
     }
-}
-function show_reply(){
-    if(is_reply) {
-        document.querySelector(".container-reply").style.display = "none";
-        is_reply = false;
-    }
-        else{
-        document.querySelector(".container-reply").style.display = "block";
-        is_reply = true;
-    }
-}
+});
+// let scrollP=0;
+// let maxScroll=0;
+// $(window).bind('mousewheel', function(event) {
+//     if (event.originalEvent.wheelDelta >= 0) {
+//        scrollP--;
+//         console.log(scrollP)
+//
+//     }
+//     else {
+//        maxScroll=++scrollP;
+//         console.log(maxScroll)
+//         console.log(scrollP)
+//        if (maxScroll%10==0){
+//            console.log(1)
+//        }
+//
+//     }
+// });
+
+
+
+
 
 // Open message
 $('#chat_icon').click(function(){

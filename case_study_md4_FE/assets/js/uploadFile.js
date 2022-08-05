@@ -25,8 +25,10 @@ function del_img(){
 
 
 function uploadFile() {
+    token=localStorage.getItem("token")
     if (link.files[0] == undefined) {
-        return;
+        createPost("");
+        return
     }
     let formData = new FormData();
     formData.append("file", link.files[0]);
@@ -35,9 +37,12 @@ function uploadFile() {
         processData: false,
         type: "POST",
         data: formData,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader ("Authorization", "Bearer " + token);
+        },
         url: "http://localhost:8080/upfile",
         success: function (data) {
-            create(data);
+            createPost(data);
         }
     });
 }

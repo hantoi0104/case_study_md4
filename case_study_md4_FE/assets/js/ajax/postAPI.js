@@ -1,4 +1,5 @@
 getPost()
+
 function getPost() {
     $.ajax({
         type: "GET",
@@ -23,6 +24,7 @@ function getPost() {
     function  showPost(posts){
         let str=""
         for (const p of posts){
+            countLike(p.id)
             str+=`<div class="post-top">
                 <div class="dp">
                     <img src="${p.account.avatar}" alt="">
@@ -44,15 +46,15 @@ function getPost() {
                     <div class="quantity-like">
                         <i class="fas fa-thumbs-up" style="color: #ffffff;
                          background-color: #0076e7; font-size: 10px; border-radius: 50%; padding: 5px"></i>
-                        <span>4</span>
+                        <span id="soLike${p.id}"></span>
                     </div>
-                    <div class="quantity-comment" id="${p.id}">
+                    <div class="quantity-comment" id="cmts${p.id}">
                         <span id="socmt${p.id}">4</span>
                         <span>bình luận</span>
                     </div>
                 </div>
                 <div class="post-bottom">
-                    <div class="action">
+                    <div class="action" onclick="createLike(${p.id})">
                         <i class="far fa-thumbs-up"></i>
                         <span>Like</span>
                     </div>
@@ -72,37 +74,66 @@ function getPost() {
                             <input id="cmt${p.id}"  placeholder=" Viết bình luận ">
                             <button type="button" onclick="commentP(${p.id})">Send</button>
                         </div>
-                    <div class="all-comment" id="allcmt${p.id}">
+                    <div class="all-comment" id="allcmt${p.id}" style="margin-bottom: 30px">
                         
                     </div>
+                    <a href="" style="margin-top: 20px" onclick="loadCMT(${p.id})" class="moreCMT" id="moreCMT${p.id}">Xem thêm bình luận</a>
                 </div>
 
             </div> 
             <br>
-            <hr><hr>`
+            <hr><hr>
+            <br>`
 
         }
         document.getElementById("timeLine").innerHTML=str
+        let moreCmt=document.querySelectorAll(".moreCMT")
+        for (let i = 0; i <moreCmt.length ; i++) {
+            moreCmt[i].addEventListener('click',function (ev){
+                ev.preventDefault()
+            })
+        }
         let soLCmt=document.querySelectorAll(".quantity-comment")
         for (let i = 0; i <soLCmt.length ; i++) {
-            demBL(soLCmt[i].getAttribute("id"))
+          let cm=  soLCmt[i].getAttribute("id")
+
+            demBL(cm.split("cmts")[1])
         }
 
 }
 
-function demBL(id){
+ function demBL(id){
     $.ajax({
         type: "GET",
         headers: {
             'Accept': 'application/json',
-
         },
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Bearer " + token);
         },
-        url: "http://localhost:8080/post/dembl/"+{id},
+        url: "http://localhost:8080/comment/dembl/"+id,
         success: function (data) {
-            showPost(data)
+            let ids="socmt"+id
+            document.getElementById(ids).innerHTML=data;
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    })
+}
+function countCMTbyCMT(id){
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Accept': 'application/json',
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        url: "http://localhost:8080/comment/dembl/cmt/"+id,
+        success: function (data) {
+            let ids="socmtbycmt"+id
+            document.getElementById(ids).innerHTML=data;
         },
         error: function (err) {
             console.log(err)

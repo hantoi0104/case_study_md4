@@ -619,7 +619,7 @@ textarea {
 }
 
 .write-comment {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -642,7 +642,8 @@ textarea {
     height: 30px;
     width: 80%;
     border: 1px solid #d0d0d0;
-    border-radius: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
 }
 
 .write-comment button a {
@@ -711,7 +712,7 @@ textarea {
 
 .content-reply {
     flex-grow: 1;
-    background-color: #f1f1f1;
+    background-color: #f6f4f4;
     border-radius: 10px;
     padding: 5px 5px;
     margin: 0px 30px 0px 5px;

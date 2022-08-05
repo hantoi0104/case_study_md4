@@ -1,5 +1,5 @@
+let acc;
 getAccount();
-
 function getAccount(){
     $.ajax({
         type: "GET",
@@ -11,8 +11,7 @@ function getAccount(){
         },
         url: "http://localhost:8080/api/user",
         success: function (data) {
-            console.log(data)
-            show_Account(data)
+                show_Account(data)
         },
         error: function (err) {
             console.log(err)
@@ -31,7 +30,6 @@ function getAllFriend(){
         },
         url: "http://localhost:8080/api/friend",
         success: function (data) {
-            console.log(data)
             show_Account(data)
         },
         error: function (err) {
@@ -42,8 +40,17 @@ function getAllFriend(){
 
 
 
+
+
+
+
 function show_Account(account){
     document.querySelector("nav .nav-right .profile").style.backgroundImage = `url("${account.avatar}")`
-    document.querySelector(".container .left-panel .profile").style.backgroundImage = `url("${account.avatar}")`
+    document.getElementById("userIMG").src = `${account.avatar}`
+    document.getElementById("userCreateP").innerText=account.fullName
+    document.getElementById("username").innerText=account.fullName
+    document.getElementById("imgCreateP").src  =`${account.avatar}`
 
+    document.querySelector(".container .left-panel .profile").style.backgroundImage = `url("${account.avatar}")`
+    acc=account
 }
