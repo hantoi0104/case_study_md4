@@ -1,5 +1,4 @@
 
-
 function commentP(id){
     let idC="cmt"+id
     let cmt1=document.getElementById(idC);
@@ -44,7 +43,7 @@ function commentP(id){
 function  addCMTinCMT(cmt){
     let idallC= "container-reply"+cmt.comment.id
 
-    $('#'+idallC).prepend(`
+    $('#'+idallC).append(`
                             <div class="top-reply">
                                <div>
                                     <img style="margin-left: 3px;" src="${cmt.account.avatar}">
@@ -75,12 +74,15 @@ function  addCMT(data){
                             <span style="font-size: 14px; font-weight: normal; margin-left:400px">reply</span>
                             <span style="font-size: 13px; font-weight: bold; " id="socmtbycmt${data.id}">10</span>
                         </div>
-                        <div class="container-reply" id="container-reply${data.id}">
-                            <div class="top-reply">
+                        <div class="container-reply" id="container-reply1${data.id}">
+                            <div id="container-reply${data.id}">
+                            
+                            </div>
+                            <div id="container-reply2${data.id}">
+                            
                             </div>
                         </div>`
     )
-    console.log(1)
     countCMTbyCMT(data.id)
 }
 function  commentC(id,postID){
@@ -132,6 +134,7 @@ function  commentC(id,postID){
 
 }
 function showCMTbyPost(comments,id){
+    size=5;
     let idallC= "allcmt"+id
     let str=""
     for (const c of comments) {
@@ -150,7 +153,13 @@ function showCMTbyPost(comments,id){
                             <span style="font-size: 14px; font-weight: normal; margin-left:400px">reply</span>
                             <span style="font-size: 13px; font-weight: bold; " id="socmtbycmt${c.id}"></span>
                         </div>
-                        <div class="container-reply" id="container-reply${c.id}">
+                        <div class="container-reply" id="container-reply1${c.id}">
+                            <div id="container-reply${c.id}">
+                            
+                            </div>
+                            <div id="container-reply2${c.id}">
+                            
+                            </div>
                             
                         </div>
 `
@@ -167,6 +176,9 @@ function showCMTbyPost(comments,id){
 
 }
 function showCMTbyCMT(comments,id,postID){
+
+
+    let idc1="container-reply2"+id
     let idallC= "container-reply"+id
     let str=""
     for (const c of comments) {
@@ -181,13 +193,15 @@ function showCMTbyCMT(comments,id,postID){
               </div>              
 `
     }
-    str+=`        <div class="write-comment">
+    document.getElementById(idallC).innerHTML=str
+
+    str1=`        <div class="write-comment">
                                     <img style="    margin-left: 43px;" width="30px" height="30px" class="userIMGcmt" src="">
                                     <input style="    margin-left: 10px; margin-right: 10px;" id="cmtincmt${id}"  placeholder=" Viết bình luận ">
                                     <button style="    margin-right: 22px;" type="button" onclick="commentC(${id},${postID})">Send</button>
                                 </div>`
 
-    document.getElementById(idallC).innerHTML=str
+    document.getElementById(idc1).innerHTML=str1
 
     let userIMG=document.querySelectorAll(".userIMGcmt")
     for (let i=0;i<userIMG.length;i++){
@@ -195,7 +209,6 @@ function showCMTbyCMT(comments,id,postID){
     }
 
 }
-let size=5;
 function show_comment(id){
     if(is_show) {
         document.getElementById(id).style.display = "none";
@@ -227,7 +240,8 @@ function show_comment(id){
 }
 
 function show_reply(id,postID){
-    let idc="container-reply"+id
+    let idc="container-reply1"+id
+    console.log(idc)
     if(is_reply) {
         document.getElementById(idc).style.display= "none";
         is_reply = false;
@@ -247,6 +261,7 @@ function show_reply(id,postID){
             //xử lý khi thành công
 
             success: function (data) {
+                console.log(data.content)
                 showCMTbyCMT(data.content,id,postID)
             },
             error: function (err) {
@@ -257,10 +272,7 @@ function show_reply(id,postID){
         is_reply = true;
     }
 }
-
 function  loadCMT(id){
-   // demBL(id).then(response=>console.log(response))
-    size+=5;
 
     $.ajax({
         type: "GET",
@@ -275,6 +287,9 @@ function  loadCMT(id){
 
         //xử lý khi thành công
         success: function (data) {
+             // size+=data.content.length;
+
+            console.log(size)
             showCMTbyPost(data.content,id)
         },
         error: function (err) {

@@ -15,17 +15,19 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/api/user")
+@RequestMapping("/api/friend")
 public class FriendAPI {
-//    @Autowired
-//    RelationService relationService;
-//
-//    @Autowired
-//    AccountService accountService;
-//    UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//
-//    @GetMapping
-//    public List<Account> getFriendOfAccount() {
-//        return relationService.findFriendOfAccount(accountService.findByEmail(userDetails.getUsername()));
-//    }
+    @Autowired
+    RelationService relationService;
+
+    @Autowired
+    AccountService accountService;
+
+    @GetMapping
+    public List<Account> getFriendOfAccount() {
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        List<Account> accounts = relationService.findFriendOfAccount(accountService.findByEmail(userDetails.getUsername()));
+        System.out.println(accounts);
+        return accounts;
+    }
 }

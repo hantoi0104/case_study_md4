@@ -10,7 +10,7 @@ function getPost() {
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Bearer " + token);
         },
-        url: "http://localhost:8080/post",
+        url: "http://localhost:8080/post/home",
         success: function (data) {
             showPost(data.content)
         },

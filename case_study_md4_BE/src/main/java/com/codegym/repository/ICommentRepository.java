@@ -15,7 +15,7 @@ public interface ICommentRepository  extends PagingAndSortingRepository<Comment,
     Page<Comment> findAllByPostOrderByDateDesc(Post post, Pageable pageable);
 
     ArrayList<Comment> findAllByPost(Post post);
-    Page<Comment> findAllByCommentOrderByDateDesc(Comment comment, Pageable pageable);
+    Page<Comment> findAllByCommentOrderByDateAsc(Comment comment, Pageable pageable);
 
     int countCommentByComment(Comment comment);
     int countCommentByPost(Post post);

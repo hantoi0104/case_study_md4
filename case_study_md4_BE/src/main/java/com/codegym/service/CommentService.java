@@ -31,7 +31,7 @@ public class CommentService {
     }
 
     public Page<Comment> findbyCMT(Comment comment, Pageable pageable){
-        Page<Comment> comments=iCommentRepository.findAllByCommentOrderByDateDesc(comment,pageable);
+        Page<Comment> comments=iCommentRepository.findAllByCommentOrderByDateAsc(comment,pageable);
         return comments;
     }
 

@@ -9,17 +9,26 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Optional;
+
 @Repository
 public class AccountService implements UserDetailsService {
     @Autowired
     IAccountRepository iAccountRepository;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-       Account account = iAccountRepository.findByEmail(username);
-       return  new User(account.getEmail(), account.getPassWord(), account.getRoles());
+        Account account = iAccountRepository.findByEmail(username);
+        return new User(account.getEmail(), account.getPassWord(), account.getRoles());
     }
 
-    public Account findByEmail(String email){
+    public Account findByEmail(String email) {
         return iAccountRepository.findByEmail(email);
+    }
+
+    public Account findByID(long id) {
+        Account account = iAccountRepository.findById(id).get();
+        return account;
     }
 }

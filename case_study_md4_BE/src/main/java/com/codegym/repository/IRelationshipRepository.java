@@ -9,8 +9,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface IRelationshipRepository extends CrudRepository<Relationship, Long> {
-    @Query(value = "select account1 from relationship where account2 =: account \n" +
+    @Query(value = "select account1_id from relationship where account2_id =:id  \n" +
             "UNION \n" +
-            "select  account2 from relationship where account1 =:account",nativeQuery = true)
-    List<Account> findFriendOfAccount(@Param("account") Account account);
+            "select  account2_id from relationship where account1_id =:id",nativeQuery = true)
+    List<Long> findFriendOfAccount(@Param("id") long id);
 }
