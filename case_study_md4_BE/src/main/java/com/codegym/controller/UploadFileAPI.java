@@ -15,10 +15,10 @@ public class UploadFileAPI {
     public String upImg(@RequestParam MultipartFile file){
         String name = file.getOriginalFilename();
         try {
-            FileCopyUtils.copy(file.getBytes(),new File("/home/hauhc1203/Desktop/case_study_md4/case_study_md4_FE/assets/img/post" + name));
+            FileCopyUtils.copy(file.getBytes(),new File("/home/hauhc1203/Desktop/case_study_md4/case_study_md4_FE/assets/img/post/" + name));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "../img/post/"+name;
+        return "../assets/img/post/"+name;
     }
 }

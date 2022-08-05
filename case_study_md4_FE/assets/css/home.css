@@ -96,9 +96,9 @@ nav .nav-right {
 }
 
 nav .nav-right .profile, .container .left-panel .profile {
-    background: url('../../assets/img/avarta.jpg');
-    height: 30px;
-    width: 30px;
+    /*background: url('../../assets/img/avarta.jpg');*/
+    height: 40px;
+    width: 40px;
     background-size: cover;
     border-radius: 50%;
     cursor: pointer;

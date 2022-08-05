@@ -3,9 +3,8 @@ package com.codegym.models;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
-import static java.time.LocalTime.now;
 
 @Entity
 @Data
@@ -15,7 +14,8 @@ public class Post  {
     private long id;
     @ManyToOne
     private Account account;
-
+    @ManyToOne
+    private Group group;
     @Column(length = 10000000)
     private String content;
     @Column(length = 10000000)
