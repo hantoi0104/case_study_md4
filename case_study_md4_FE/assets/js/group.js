@@ -29,15 +29,14 @@ function showData(data) {
         str += `
             <li onclick="showDetail(${g.id})">
 <!--                <span class="fa fa-user-friends"></span>-->
-                <span><img src="${g.coverGroupImg}" style="width: 70px;height: 70px; border-radius: 7px;" ></span>
-                <div style="margin-left: 30px">
+                <span><img src="${g.coverGroupImg}" style="width: 80px;height: 80px; border-radius: 7px;" ></span>
+                <div style="margin-left: 30px;width: 120px">
                 <p style="font-size: 25px">${g.groupName}</p><br>
-                <p >${g.status}</p>
+                <p style="font-size: 15px">${g.status}</p>
                 </div>
                 <div>
-                <p style="opacity: 0.7; filter: alpha(opacity=50);font-size: 13px; margin-top: 40px">- Ngày tạo<a>(${g.gcreate})</a></p>
+                <p style="opacity: 0.7; filter: alpha(opacity=50);font-size: 13px; margin-top: 62px">- Ngày tạo<a>(${g.gcreate})</a></p>
                 </div>
-                       
             </li>
                 `;
     }
@@ -103,7 +102,7 @@ function uploadFile() {
     let token = localStorage.getItem("token")
     let fileImg = document.getElementById("coverGroupImg").files;
     if (fileImg.length === 0) {
-        alert("ảnh chưa up");
+        alert("Vui Lòng Upload File Ảnh Của Bạn");
         return;
     }
     let formData = new FormData();

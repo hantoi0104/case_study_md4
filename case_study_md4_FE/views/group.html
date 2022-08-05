@@ -211,23 +211,27 @@
     </div>
 </nav>
 <div class="container">
-    <div class="left-panel" style="width: 400px;background-color: ghostwhite">
+    <div class="left-panel" style="width: 450px;background-color: ghostwhite;overflow-x:hidden;
+            overflow-y:auto;">
         <ul>
-            <li>
-                <span></span>
-                <h2>Nhóm</h2>
-            </li>
-            <li>
-                <span></span>
-                <button class="btn-create-group"><a href="creategroup.html">+ Tạo nhóm mới</a></button>
-            </li>
-            <li>
-                <hr >
-            </li>
-            <li>
-<!--                <span class="profile"></span>-->
-                <p style="font-size: 20px">Nhóm của bạn</p>
-            </li>
+            <div>
+                <li>
+                    <span></span>
+                    <h2>Nhóm</h2>
+                </li>
+                <li>
+                    <span><img src="../assets/img/human.png" style="width: 50px;height: 50px; border-radius: 50%"></span>
+                    <button class="btn-create-group"><a href="creategroup.html">+ Tạo nhóm mới</a></button>
+                </li>
+                <li>
+                    <hr >
+                </li>
+                <li>
+                    <!--                <span class="profile"></span>-->
+                    <p style="font-size: 20px">Nhóm của bạn</p>
+                </li>
+            </div>
+
             <div id="showGroup">
             </div>
         </ul>
