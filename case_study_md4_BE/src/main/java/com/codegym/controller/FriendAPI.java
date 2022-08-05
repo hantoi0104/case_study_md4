@@ -17,15 +17,15 @@ import java.util.List;
 @CrossOrigin("*")
 @RequestMapping("/api/user")
 public class FriendAPI {
-    @Autowired
-    RelationService relationService;
-
-    @Autowired
-    AccountService accountService;
-    UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
-    @GetMapping
-    public List<Account> getFriendOfAccount() {
-        return relationService.findFriendOfAccount(accountService.findByEmail(userDetails.getUsername()));
-    }
+//    @Autowired
+//    RelationService relationService;
+//
+//    @Autowired
+//    AccountService accountService;
+//    UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//
+//    @GetMapping
+//    public List<Account> getFriendOfAccount() {
+//        return relationService.findFriendOfAccount(accountService.findByEmail(userDetails.getUsername()));
+//    }
 }
