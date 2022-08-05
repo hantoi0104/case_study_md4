@@ -44,6 +44,6 @@ function FromValidate()
 
     if (fullname  && email && password_confirmation && password && password == password_confirmation){
         alert("đăng ký thành công")
-        createAccount();
+        getData();
     }
 }

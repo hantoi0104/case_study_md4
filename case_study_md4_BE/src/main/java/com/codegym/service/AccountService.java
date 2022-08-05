@@ -9,6 +9,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class AccountService implements UserDetailsService {
     @Autowired
@@ -21,6 +23,10 @@ public class AccountService implements UserDetailsService {
 
     public Account findByEmail(String email){
         return iAccountRepository.findByEmail(email);
+    }
+
+    public List<Account> getAll(){
+        return (List<Account>) iAccountRepository.findAll();
     }
     public Account save(Account account){
         return iAccountRepository.save(account);
