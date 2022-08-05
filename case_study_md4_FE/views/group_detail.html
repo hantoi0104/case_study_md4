@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Group</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="../assets/css/group.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!--    <title>MediaBook</title>-->
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <img src="../assets/img/vietnamLogo.png" alt="Logo">
+    <form>
+      <div class="search">
+        <input id="search" oninput="searchG()" name="search" type="text" placeholder="Search MediaSocial..">
+        <button type="submit" class="btn-search">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="nav-middle">
+    <a href="#" class="active">
+      <i class="fa fa-home"></i>
+    </a>
+
+    <a href="#">
+      <i class="fa fa-user-friends"></i>
+    </a>
+
+    <a href="#">
+      <i class="fa fa-play-circle"></i>
+    </a>
+
+    <a href="#">
+      <i class="fa fa-users"></i>
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <div class="nav-right-icon">
+      <span class="profile"></span>
+
+      <a id="chat_icon" href="#">
+        <i class="fas fa-comment-dots"></i>
+      </a>
+      <a href="#">
+        <i class="fa fa-bell"></i>
+      </a>
+
+      <a href="#">
+        <i class="fas fa-ellipsis-h"></i>
+      </a>
+    </div>
+
+    <div class="nav-right-window-chat">
+      <div class="window-chat-top">
+        <div class="top-chat">
+          <div style="width: 100px; margin-left: 5px"><h1>Chat</h1></div>
+          <div class="top-icon">
+            <a href="#"><i class="fas fa-ellipsis-h" style="font-size: 18px"></i></a>
+            <a href="#"><i class="fa fa-bell" style="font-size: 18px"></i></a>
+            <a href="#"><i class="fas fa-times-circle" style="font-size: 18px"
+                           onclick="close_chat()"></i></a>
+          </div>
+        </div>
+
+        <div class="search-message">
+          <input name="search" type="text" placeholder="Search Message..">
+          <button type="submit" class="btn-search"
+                  style="margin-left: 10px; background-color: transparent; border-color: transparent">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="window-chat-main">
+
+        <a class="friend-chat" href="#">
+          <div class="item-friend">
+            <img src="../assets/img/avarta.jpg" alt="">
+            <div>
+              <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
+              <p style="width: 250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
+            </div>
+            <div class="icon-edit-chat">
+              <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
+            </div>
+          </div>
+
+        </a>
+
+        <a class="friend-chat" href="#">
+          <div class="item-friend">
+            <img src="../assets/img/avarta.jpg" alt="">
+            <div>
+              <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
+              <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
+            </div>
+            <div class="icon-edit-chat">
+              <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
+            </div>
+          </div>
+
+        </a>
+
+        <a class="friend-chat" href="#">
+          <div class="item-friend">
+            <img src="../assets/img/avarta.jpg" alt="">
+            <div>
+              <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
+              <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
+            </div>
+            <div class="icon-edit-chat">
+              <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
+            </div>
+
+          </div>
+        </a>
+
+        <a class="friend-chat" href="#">
+          <div class="item-friend">
+            <img src="../assets/img/avarta.jpg" alt="">
+            <div>
+              <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
+              <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
+            </div>
+            <div class="icon-edit-chat">
+              <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
+            </div>
+
+          </div>
+        </a>
+
+        <a class="friend-chat" href="#">
+          <div class="item-friend">
+            <img src="../assets/img/avarta.jpg" alt="">
+            <div>
+              <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
+              <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
+            </div>
+            <div class="icon-edit-chat">
+              <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
+            </div>
+
+          </div>
+        </a>
+
+
+        <a class="friend-chat" href="#">
+          <div class="item-friend">
+            <img src="../assets/img/avarta.jpg" alt="">
+            <div>
+              <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
+              <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
+            </div>
+            <div class="icon-edit-chat">
+              <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
+            </div>
+
+          </div>
+
+        </a>
+
+        <a class="friend-chat" href="#">
+          <div class="item-friend">
+            <img src="../assets/img/avarta.jpg" alt="">
+            <div>
+              <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
+              <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
+            </div>
+            <div class="icon-edit-chat">
+              <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
+            </div>
+
+          </div>
+
+        </a>
+
+        <a class="friend-chat" href="#">
+          <div class="item-friend">
+            <img src="../assets/img/avarta.jpg" alt="">
+            <div>
+              <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>
+              <p style="width:250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>
+            </div>
+            <div class="icon-edit-chat">
+              <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>
+            </div>
+
+          </div>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </div>
+</nav>
+<div class="container">
+  <div class="left-panel" style="width: 400px;">
+    <div>
+      <div>
+        <img id="img" style="height: 200px;width: 400px">
+        <p id="name" style="margin: 20px;font-size: 40px"></p>
+        <p id="status" style="margin: 20px;"></p>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Advance</a>
+      <a href="#">More</a>
+    </div>
+  </div>
+
+  <div class="middle-panel" style="background-color: #e4e6eb">
+
+    <div class="story-section">
+
+      <div class="story create">
+        <div class="dp-image">
+          <img src="../assets/img/dp.jpg" alt="Profile pic">
+        </div>
+        <span class="dp-container">
+                        <i class="fa fa-plus"></i>
+                    </span>
+        <span class="name">Create Story</span>
+      </div>
+
+      <div class="story">
+        <img src="../assets/img/model.jpg" alt="Anuska's story">
+        <div class="dp-container">
+          <img src="../assets/img/girl.jpg" alt="">
+        </div>
+        <p class="name">Anuska Sharma</p>
+      </div>
+
+      <div class="story">
+        <img src="../assets/img/boy.jpg" alt="Story image">
+        <span class="dp-container">
+                        <img src="../assets/img/dp.jpg" alt="Profile pic">
+                    </span>
+        <span class="name">Gaurav Gall</span>
+      </div>
+
+      <div class="story">
+        <img src="../assets/img/mountains.jpg" alt="Story image">
+        <span class="dp-container">
+                        <img src="../assets/img/boy.jpg" alt="Profile pic">
+                    </span>
+        <span class="name">Priyank Saksena</span>
+      </div>
+
+      <div class="story">
+        <img src="../assets/img/shoes.jpg" alt="Story image">
+        <span class="dp-container">
+                        <img src="../assets/img/model.jpg" alt="Profile pic">
+                    </span>
+        <span class="name">Pragati Adhikari</span>
+      </div>
+    </div>
+
+    <!-- Post area-->
+    <div class="post create">
+      <div class="post-top">
+        <div class="dp">
+          <img src="../assets/img/girl.jpg" alt="">
+        </div>
+        <input onclick="open_create_post()" type="text" placeholder="What's on your mind, Aashish ?"/>
+      </div>
+
+      <div class="post-bottom">
+        <div class="action">
+          <i class="fa fa-video"></i>
+          <span>Live video</span>
+        </div>
+        <div class="action">
+
+          <i class="fa fa-image"></i>
+          <span>Photo/Video</span>
+
+        </div>
+        <div class="action">
+          <i class="fa fa-smile"></i>
+          <span>Feeling/Activity</span>
+        </div>
+      </div>
+      <div class="container-create-post">
+        <div class="top-create-post">
+          <div></div>
+          <div style="margin-top: 7px">
+            <span> Tạo bài viết</span>
+          </div>
+          <div onclick="close_post()">
+            <i class="fas fa-window-close"
+               style="color: #d00000; padding: 20px 20px 20px 20px; font-size: 18px"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="post">
+      <div class="post-top">
+        <div class="dp">
+          <img src="../assets/img/avarta.jpg" alt="">
+        </div>
+        <div class="post-info">
+          <p class="name">Han Toi</p>
+          <span class="time">2 days ago</span>
+        </div>
+        <i class="fas fa-ellipsis-h"></i>
+      </div>
+
+      <div class="post-content">
+        <p>Han Toi</p>
+        <img src="../assets/img/mountains.jpg"/>
+      </div>
+
+      <div class="container-post-bottom">
+        <div class="quantity-like-comment">
+          <div class="quantity-like">
+            <i class="fas fa-thumbs-up" style="color: #ffffff;
+                         background-color: #0076e7; font-size: 10px; border-radius: 50%; padding: 5px"></i>
+            <span>4</span>
+          </div>
+          <div class="quantity-comment">
+            <span>4</span>
+            <span>bình luận</span>
+          </div>
+        </div>
+        <div class="post-bottom">
+          <div class="action">
+            <i class="far fa-thumbs-up"></i>
+            <span>Like</span>
+          </div>
+          <div class="action" onclick="show_comment()">
+            <i class="far fa-comment"></i>
+            <span>Comment</span>
+          </div>
+          <div class="action">
+            <i class="fa fa-share"></i>
+            <span>Share</span>
+          </div>
+        </div>
+
+        <div style="display:none" class="container-comment">
+          <form action=" " method="post">
+            <div class="write-comment">
+              <img width="30px" height="30px" src="../assets/img/avarta.jpg">
+              <input name="massage" placeholder=" Viết bình luận ">
+              <button type="submit">Send</button>
+            </div>
+          </form>
+
+          <div class="all-comment">
+            <div class="top-comment">
+              <div>
+                <img src="../assets/img/avarta.jpg">
+              </div>
+              <div class="content-comment">
+                <p>Han Toi</p>
+                <span> Mới mua mà dao bán rồi</span>
+              </div>
+            </div>
+
+            <div class="bottom-comment" onclick="show_reply()">
+              <span style="font-size: 14px; font-weight: normal; margin-left:400px">reply</span>
+              <span style="font-size: 13px; font-weight: bold; ">10</span>
+            </div>
+            <div class="container-reply">
+              <div class="top-reply">
+                <div>
+                  <img src="../assets/img/avarta.jpg">
+                </div>
+                <div class="content-reply">
+                  <p>Han Toi</p>
+                  <span> Mới mua mà dao bán rồi</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </c:forEach>
+  </div>
+
+
+</div>
+<script src="../assets/js/home.js"></script>
+<script src="../assets/js/group_detail.js"></script>
+
+</body>
+<script>
+
+</script>
+</html>

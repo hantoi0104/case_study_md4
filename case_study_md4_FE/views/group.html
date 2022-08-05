@@ -16,16 +16,19 @@
 </head>
 <body>
 <nav>
-    <div class="nav-left">
+    <div class="nav-left" style="position: relative">
         <img src="../assets/img/vietnamLogo.png" alt="Logo">
         <form>
             <div class="search">
-                <input name="search" type="text" placeholder="Search MediaSocial..">
+                <input id="search"oninput="searchG()" name="search" type="text" placeholder="Search MediaSocial..">
                 <button type="submit" class="btn-search">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
             </div>
         </form>
+<!--        <div style="position: absolute;right: 0;left: 0;top: 100%;height: 500px;background-color: #1b74e4">-->
+
+<!--        </div>-->
     </div>
     <div class="nav-middle">
         <a href="#" class="active">
@@ -208,7 +211,7 @@
     </div>
 </nav>
 <div class="container">
-    <div class="left-panel">
+    <div class="left-panel" style="width: 400px;">
         <ul>
             <li>
                 <span></span>
@@ -222,21 +225,11 @@
                 <hr >
             </li>
             <li>
-                <span class="profile"></span>
-                <p>Nhóm bạn đã tham gia</p>
+<!--                <span class="profile"></span>-->
+                <p style="font-size: 20px">Nhóm của bạn</p>
             </li>
-            <li>
-                <span class="fa fa-user-friends"></span>
-                <p>Nhóm C0322G1</p>
-            </li>
-            <li>
-                <span class="fa fa-user-friends"></span>
-                <p>Nhóm C0622G1</p>
-            </li>
-            <li>
-                <span class="fa fa-user-friends"></span>
-                <p>Nhóm C0422G1</p>
-            </li>
+            <div id="showGroup">
+            </div>
         </ul>
 
         <div class="footer-links">
@@ -247,7 +240,7 @@
         </div>
     </div>
 
-    <div class="middle-panel">
+    <div class="middle-panel" style="background-color: #e4e6eb">
 
         <div class="story-section">
 
@@ -423,51 +416,49 @@
         </c:forEach>
     </div>
 
-    <div class="right-panel">
+    <div class="right-panel" style="width: 350px;">
         <div class="pages-section">
-            <h4>Your pages</h4>
-            <a class='page' href="#">
-                <div class="dp">
-                    <img src="../assets/img/logo.png" alt="">
-                </div>
-                <p class="name">Cody</p>
-            </a>
-
-            <a class='page' href="#">
-                <div class="dp">
-                    <img src="../assets/img/dp.jpg" alt="">
-                </div>
-                <p class="name">Cody Tutorials</p>
-            </a>
-        </div>
-
-        <div class="friends-section">
-            <h4>Friends</h4>
-            <a class="friend" href="#">
-                <div class="dp">
-                    <img src="../assets/img/avarta.jpg" alt="">
-                </div>
-                <p class="name">Han Toi</p>
-            </a>
-
-            <a class="friend" href="#">
-                <div class="dp">
-                    <img src="../assets/img/avarta.jpg" alt="">
-                </div>
-                <p class="name">Han Toi</p>
-            </a>
-
-            <a class="friend" href="#">
-                <div class="dp">
-                    <img src="../assets/img/avarta.jpg" alt="">
-                </div>
-                <p class="name">Han Toi</p>
-            </a>
+            <h4>Nhóm bạn tham gia</h4>
+            <div id="myGroup">
+<!--                <a class='page' href="#">-->
+<!--                    <div class="dp">-->
+<!--                        <img src="../assets/img/dp.jpg" alt="">-->
+<!--                    </div>-->
+<!--                    <p class="name">Cody Tutorials</p>-->
+<!--                </a>-->
+            </div>
 
         </div>
+
+<!--        <div class="friends-section">-->
+<!--            <h4>Friends</h4>-->
+<!--            <a class="friend" href="#">-->
+<!--                <div class="dp">-->
+<!--                    <img src="../assets/img/avarta.jpg" alt="">-->
+<!--                </div>-->
+<!--                <p class="name">Han Toi</p>-->
+<!--            </a>-->
+
+<!--            <a class="friend" href="#">-->
+<!--                <div class="dp">-->
+<!--                    <img src="../assets/img/avarta.jpg" alt="">-->
+<!--                </div>-->
+<!--                <p class="name">Han Toi</p>-->
+<!--            </a>-->
+
+<!--            <a class="friend" href="#">-->
+<!--                <div class="dp">-->
+<!--                    <img src="../assets/img/avarta.jpg" alt="">-->
+<!--                </div>-->
+<!--                <p class="name">Han Toi</p>-->
+<!--            </a>-->
+
+<!--        </div>-->
     </div>
 </div>
 <script src="../assets/js/home.js"></script>
+<script src="../assets/js/group.js"></script>
+<script src="../assets/js/group_detail.js"></script>
 
 </body>
 </html>

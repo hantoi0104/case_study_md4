@@ -237,7 +237,7 @@
         <input id="groupName" style="height: 50px; width: 360px; margin: 10px;border-radius: 25px;padding: 12px 20px;" placeholder="Tên nhóm">
 
 <!--        Thẻ Select nhập lựa chọn-->
-        <select style="height: 50px; width: 360px; margin: 10px;border-radius: 25px;padding: 12px 20px;" placeholder="Chọn quyền riêng tư">
+        <select id="status" style="height: 50px; width: 360px; margin: 10px;border-radius: 25px;padding: 12px 20px;" placeholder="Chọn quyền riêng tư">
             <option>Công Khai</option>
             <option>Riêng Tư</option>
         </select>
@@ -249,7 +249,7 @@
 <!--        <input id="img" type="file">-->
         <div style="text-align:center;padding:3%;border-radius: 25px;border:thin solid black;width: 360px; margin: 10px;margin-top: 50px">
             <label>Select Image <br/><br>
-                <input id="img" type="file"     >
+                <input id="coverGroupImg" type="file">
             </label>
         </div>
 
@@ -261,7 +261,7 @@
         </div>
 
         <div style="margin-top: 150px">
-            <button onclick="" style="height: 60px; width: 300px; margin: 50px;border-radius: 7px; background-color: dodgerblue">Create</button>
+            <button onclick="uploadFile()" style="height: 60px; width: 300px; margin: 50px;border-radius: 7px; background-color: dodgerblue">Create</button>
         </div>
     </div>
 
@@ -300,5 +300,6 @@
 
 </div>
 <script src="../assets/js/home.js"></script>
+<script src="../assets/js/group.js"></script>
 </body>
 </html>
