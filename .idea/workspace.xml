@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5045254-9ad7-4df9-999d-af9be50f52c8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/case_study_md4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/case_study_md4.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study_md4_BE/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_md4_BE/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study_md4_FE/assets/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_md4_FE/assets/css/profile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case_study_md4_FE/views/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_md4_FE/views/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +75,8 @@
       <workItem from="1659431602066" duration="614000" />
       <workItem from="1659577508035" duration="1814000" />
       <workItem from="1659601244399" duration="545000" />
-      <workItem from="1659621181322" duration="616000" />
+      <workItem from="1659621181322" duration="3714000" />
+      <workItem from="1659668597244" duration="3555000" />
     </task>
     <servers />
   </component>
@@ -91,7 +88,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/hantoi0104" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
