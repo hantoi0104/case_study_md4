@@ -1,9 +1,13 @@
 let id = localStorage.getItem("id");
+let token = localStorage.getItem("token")
 $.ajax({
     type: "GET",
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
+    },
+    beforeSend: function (xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + token);
     },
     url: "http://localhost:8080/groups/" + id,
     //xử lý khi thành công
