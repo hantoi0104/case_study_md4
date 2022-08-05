@@ -20,6 +20,7 @@ function createAccount(emails) {
         success: function (data) {
             console.log(data)
             // localStorage.setItem("token", data);
+            alert("đăng ký thành công")
             location.href = "login.html"
         },
         error: function (err) {
@@ -41,6 +42,7 @@ function getData() {
             console.log("data")
             console.log(data)
             checkmail(data);
+
         },
         error: function (err) {
             console.log(err)
