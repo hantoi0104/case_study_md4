@@ -2,7 +2,6 @@ let is_show = false;
 let is_reply = false
 let is_show_chat =false;
 let is_show_create_post = false;
-let is_show_chat_one_one = false;
 function show_comment(){
     if(is_show) {
         document.querySelector(".container-comment").style.display = "none";
@@ -66,29 +65,17 @@ function close_post() {
     }
 }
 
-
-//chat one to one
-
-
-// load friend
-function getFriend() {
-    $.ajax({
-        type: "GET",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        url: "http://localhost:8080/friend",
-        //xử lý khi thành công
-        success: function (data) {
-            console.log("data")
-            console.log(data)
-        },
-        error: function (err) {
-            console.log(err)
-        }
-    })
+function openChat(id, fullName, avatar, email, status) {
+    document.querySelector(".nav-right-window-chat-one-one").style.display = "block";
+    document.querySelector(".info-chat-one img").src = avatar;
+    document.querySelector(".name-friend-chat-one").innerHTML = fullName;
+    document.querySelector(".nav-right-window-chat").style.display = "none";
 }
+
+function close_chat_one_one() {
+    document.querySelector(".nav-right-window-chat-one-one").style.display = "none";
+}
+
 
 
 
