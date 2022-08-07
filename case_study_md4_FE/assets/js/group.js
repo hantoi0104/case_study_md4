@@ -1,6 +1,6 @@
-getData();
+getGroup();
 
-function getData() {
+function getGroup() {
     let token = localStorage.getItem("token")
     $.ajax({
         type: "GET",
@@ -14,7 +14,7 @@ function getData() {
         url: "http://localhost:8080/groups",
         //xử lý khi thành công
         success: function (data) {
-            showData(data);
+            showGroup(data);
             showAllGroup(data);
         },
         error: function (err) {
@@ -22,7 +22,7 @@ function getData() {
         }
     })
 }
-function showData(data) {
+function showGroup(data) {
     let str = "";
     for (const g of data) {
         console.log(g)
@@ -90,7 +90,7 @@ function create(data) {
         //xử lý khi thành công
         success: function (data) {
             location.href = "group.html";
-            getData();
+
         },
         error: function (err) {
             console.log(err)

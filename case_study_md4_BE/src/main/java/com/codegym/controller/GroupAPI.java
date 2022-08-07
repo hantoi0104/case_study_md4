@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 
@@ -31,6 +32,8 @@ public class GroupAPI {
     @PostMapping
     public void save(@RequestBody Group group){
         group.setAdmin(userAPI.getAccount());
+        Date date=new Date();
+        group.setGCreate(date);
         groupService.save(group);
     }
 
@@ -38,11 +41,11 @@ public class GroupAPI {
     public String coverGroupImg(@RequestParam MultipartFile file){
         String name = file.getOriginalFilename();
         try {
-            FileCopyUtils.copy(file.getBytes(),new File("/mnt/54805B1C158071A5/JetBrain-CodeGym/CodeGym_AllModule_Courseware/Module4_CG/Week4/case_study_md4/case_study_md4_FE/assets/img/imgGroup/" + name));
+            FileCopyUtils.copy(file.getBytes(),new File("/home/hauhc1203/Desktop/case_study_md4/case_study_md4_FE/assets/img/imgGroup/" + name));
         }catch (IOException e){
             e.printStackTrace();
         }
-        return "/case_study_md4_FE/assets/img/imgGroup/"+name;
+        return "../assets/img/imgGroup/"+name;
     }
 
     @DeleteMapping("/{id}")

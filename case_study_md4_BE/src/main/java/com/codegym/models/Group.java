@@ -3,6 +3,7 @@ package com.codegym.models;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -20,7 +21,7 @@ public class Group {
     private String coverGroupImg;
     @Basic(optional = false)
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable = false, updatable = false)
-    private java.sql.Timestamp gCreate;
+    private Date gCreate;
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Account> accounts;
 }

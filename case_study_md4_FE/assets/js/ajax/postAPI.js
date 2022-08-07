@@ -23,7 +23,6 @@ function getPost(sizeHome) {
 let maxScrollY=0;
 let size1=5
 $(window).bind('mousewheel', function(event) {
-    console.log(window.scrollY)
     if (maxScrollY!=0&&maxScrollY==window.scrollY){
         size1+=5;
         getPost(size1)
@@ -36,21 +35,44 @@ $(window).bind('mousewheel', function(event) {
 
 });
 
+function checkdate(datePost){
+    let now=new Date();
+    let e=now.getTime()-datePost.getTime()
+    e=e/1000
+    if (e<60){
+        return "Vừa xong"
+    }else if (e<3600){
+        let min=e/60
+        return Math.floor(min)+" phút trước"
+    }else if (e<86400){
+        let hours=e/3600
+        return Math.floor(hours)+" giờ trước"
+    }else if (e<604800){
+        let days=e/86400
+        return Math.floor(days)+" ngày trước"
+    }else if (e<2419200){
+        let weeks=e/604800
+        return Math.floor(weeks)+" tuần trước"
+    }
+}
 
 
 
 
 function  showPost(posts){
         let str=""
+
         for (const p of posts){
             countLike(p.id)
+            let dateP=new Date(p.datePost);
+            let time= checkdate(dateP)
             str+=`<div class="post-top">
                 <div class="dp">
                     <img src="${p.account.avatar}" alt="">
                 </div>
                 <div class="post-info">
                     <p class="name">${p.account.fullName}</p>
-                    <span class="time">2 days ago</span>
+                    <span class="time">${time}</span>
                 </div>
                 <i class="fas fa-ellipsis-h"></i>
             </div>

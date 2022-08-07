@@ -24,7 +24,7 @@ function del_img(){
 }
 
 
-function uploadFile() {
+function uploadFilePost() {
     token=localStorage.getItem("token")
     if (link.files[0] == undefined) {
         createPost("");
