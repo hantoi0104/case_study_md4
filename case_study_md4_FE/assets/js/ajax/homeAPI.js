@@ -41,6 +41,25 @@ function getAllFriend(){
 
 
 
+function searchAcc(){
+    let name=document.getElementById("keySearch").value
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Accept': 'application/json'
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader ("Authorization", "Bearer " + token);
+        },
+        url: "http://localhost:8080/search/acc/"+name,
+        success: function (data) {
+            console.log(data)
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    })
+}
 
 
 
