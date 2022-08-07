@@ -31,4 +31,8 @@ public class AccountService implements UserDetailsService {
         Account account = iAccountRepository.findById(id).get();
         return account;
     }
+
+    public List<Account> searchByName(String name){
+        return  iAccountRepository.findAllByFullNameContainingIgnoreCase(name);
+    }
 }

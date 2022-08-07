@@ -1,3 +1,16 @@
+.btn-create-group{
+    width: 300px;
+    height: 35px;
+    color: white;
+    background-color: darkorange;
+    border: #d7d7d7;
+    border-radius: 25px;
+    font-size: 15px;
+    margin-left: 20px;
+}
+.btn-create-group a{
+    text-decoration: none
+}
 * {
     margin: 0;
     padding: 0;
@@ -96,9 +109,9 @@ nav .nav-right {
 }
 
 nav .nav-right .profile, .container .left-panel .profile {
-    /*background: url('../../assets/img/avarta.jpg');*/
-    height: 40px;
-    width: 40px;
+    background: url('../../assets/img/avarta.jpg');
+    height: 30px;
+    width: 30px;
     background-size: cover;
     border-radius: 50%;
     cursor: pointer;
@@ -212,71 +225,27 @@ window-chat-top .search-message {
     border-radius: 50%;
 }
 
-
-.nav-right-window-chat-one-one{
-    width: 350px;
-    height: 400px;
-    display: block;
-    background-color: #ffffff;
-    position: absolute;
-    top: 350px;
-    right: 100px;
-    border-radius: 5px 5px 5px 5px;
-}
-
-.chat-one-one-top{
-    box-sizing: border-box;
-    padding: 5px 5px 5px 5px ;
-    display: flex;
-    border-bottom: 1px solid #d2d2d2;
-}
-
-.info-chat-one{
-    width: 250px;
-    display: flex;
-}
-
-.info-chat-one img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-.action-chat-one{
-    display: flex;
-    width: 150px;
-    justify-content: space-around;
-    margin-top: 8px;
-}
-.action-chat-one i {
-    color: #0076e7;
-    border-radius: 2px;
-}
-
-.chat-one-one-middle{
-
-}
-.chat-one-one-bottom{
-
-}
-
-
 .container {
     background: #eee;
     display: flex;
 }
 
+.container .left-panel hr{
+    width:100%;
+    text-align:left;
+    margin-left:0;
+}
+
 .container .left-panel, .container .right-panel {
     position: sticky;
     top: 70px;
-    width: 250px;
+    width: 350px;
     height: calc(100vh - 70px);
 }
 
 .container .left-panel ul {
     padding: 10px 0px;
 }
-
 
 .container .left-panel ul li {
     list-style: none;
@@ -286,10 +255,6 @@ window-chat-top .search-message {
     transition: .3s;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.container .left-panel ul li a{
-    text-decoration: none
 }
 
 .container .left-panel ul li:hover {
@@ -423,11 +388,10 @@ window-chat-top .search-message {
     height: 428px;
     border-radius: 10px;
     background-color: #ffffff;
-    position: fixed;
+    position: absolute;
     display: none;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    left: 480px;
+    top: 180px;
     z-index: 2000;
 }
 
@@ -437,28 +401,7 @@ window-chat-top .search-message {
     margin: 5px 5px 5px 5px ;
     border-bottom: 1px solid #d7d7d7;
 }
-#acc-info{
-    display: flex;
-    justify-content: left;
-}
 
-textarea {
-    width: 100%;
-    height: 150px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border:none;
-    font-size: 16px;
-    resize: none;
-}
-
-.body-create-post{
-    display: block;
-    justify-content: left;
-    height: 60px;
-    padding: 10px;
-    margin: 10px;
-}
 .top-create-post div span{
     font-size: 17px;
     font-weight: bold;
@@ -472,17 +415,16 @@ textarea {
     padding: 10px;
     margin: 10px;
 }
-#selectpermision,.option{
-    font-size: 16px;
-}
+
 .post .post-top {
     display: flex;
     align-items: center;
     padding: 10px;
 }
-.dp {
-    width: 50px;
-    height: 50px;
+
+.post .post-top .dp {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -624,7 +566,7 @@ textarea {
 }
 
 .write-comment {
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
 }
@@ -647,8 +589,7 @@ textarea {
     height: 30px;
     width: 80%;
     border: 1px solid #d0d0d0;
-    border-radius: 5px;
-    padding-left: 10px;
+    border-radius: 10px;
 }
 
 .write-comment button a {
@@ -717,7 +658,7 @@ textarea {
 
 .content-reply {
     flex-grow: 1;
-    background-color: #f6f4f4;
+    background-color: #f1f1f1;
     border-radius: 10px;
     padding: 5px 5px;
     margin: 0px 30px 0px 5px;
@@ -774,6 +715,6 @@ textarea {
     background-color: rgba(51, 51, 51, 0.76);
     top: 0px;
     width: 100%;
-    height: 200%;
+    height: 100%;
     z-index: 1000;
 }
