@@ -15,7 +15,7 @@ function getData() {
         //xử lý khi thành công
         success: function (data) {
             showData(data);
-            showJoined(data);
+            showAllGroup(data);
         },
         error: function (err) {
             console.log(err)
@@ -146,18 +146,13 @@ function searchG() {
     })
 }
 
-function checkSearch(){
-    if (document.getElementById("search").value !== ""){
-        document.getElementById("resut").style = "block";
-    }
-}
-
-function showJoined(data) {
+function showAllGroup(data) {
     let str = "";
     for (const g of data) {
         // console.log(g)
         str += `
-                <div onclick="showDetail(${g.id})" id="result" style="display: none">
+<!--                <div onclick="showDetail(${g.id})" id="result" style="display: none">-->
+                <div onclick="showDetail(${g.id})">
                     <span class='page' href="#">
                         <img src="${g.coverGroupImg}" style="width: 70px;height: 70px; border-radius: 7px;" >
                         <p style="font-size: 18px">${g.groupName}</p><br>
@@ -167,7 +162,7 @@ function showJoined(data) {
                 `;
     }
     document.getElementById("myGroup").innerHTML = str;
-    if (document.getElementById("search").value !== ""){
-        document.getElementById("result").style = 'block';
-    }
+    // if (document.getElementById("search").value !== ""){
+    //     document.getElementById("result").style = 'block';
+    // }
 }
