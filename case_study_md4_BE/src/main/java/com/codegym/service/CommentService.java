@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CommentService {
@@ -30,8 +31,8 @@ public class CommentService {
         return iCommentRepository.findById(id).get();
     }
 
-    public Page<Comment> findbyCMT(Comment comment, Pageable pageable){
-        Page<Comment> comments=iCommentRepository.findAllByCommentOrderByDateAsc(comment,pageable);
+    public List<Comment> findbyCMT(Comment comment){
+        List<Comment> comments=iCommentRepository.findAllByCommentOrderByDateAsc(comment);
         return comments;
     }
 
@@ -47,5 +48,9 @@ public class CommentService {
     }
     public int countCMTbyCMT(Comment comment){
         return  iCommentRepository.countCommentByComment(comment);
+    }
+
+    public int countCMTByPost(Post post){
+        return iCommentRepository.countCommentByPost(post);
     }
 }

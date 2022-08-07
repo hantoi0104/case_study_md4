@@ -33,9 +33,9 @@ public class PostAPI {
         Page<Post> posts=postService.findAllByAcc(userAPI.getAccount(), PageRequest.of(0,5));
         return posts;
     }
-    @GetMapping("/home")
-    public Page<Post> loadPostforHome(){
-        Page<Post> posts=postService.loadHome(userAPI.getAccount(), PageRequest.of(0,5));
+    @GetMapping("/home/{sizeHome}")
+    public Page<Post> loadPostforHome(@PathVariable int sizeHome){
+        Page<Post> posts=postService.loadHome(userAPI.getAccount(), PageRequest.of(0,sizeHome));
         return posts;
     }
 

@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @CrossOrigin("*")
@@ -37,8 +38,8 @@ public class CommentAPI {
     }
 
     @GetMapping("/recmt/{id}")
-    public Page<Comment> getCMTbyCMT(@PathVariable long id,@RequestParam int size){
-        Page<Comment> comments=commentService.findbyCMT(commentService.findByID(id), PageRequest.of(0,size));
+    public List<Comment> getCMTbyCMT(@PathVariable long id){
+        List<Comment> comments=commentService.findbyCMT(commentService.findByID(id));
         return comments;
     }
     @GetMapping("/dembl/{id}")
@@ -49,4 +50,9 @@ public class CommentAPI {
     public int countCMTByCMT(@PathVariable long id){
         return commentService.countCMTbyCMT(commentService.findByID(id));
     }
+    @GetMapping("/demblver2/{id}")
+    public int countCMTBypostVer2(@PathVariable long id){
+        return commentService.countCMTByPost(postService.findById(id));
+    }
+
 }

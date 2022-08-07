@@ -1,6 +1,6 @@
-getPost()
 
-function getPost() {
+getPost(5)
+function getPost(sizeHome) {
     $.ajax({
         type: "GET",
         headers: {
@@ -10,7 +10,7 @@ function getPost() {
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Bearer " + token);
         },
-        url: "http://localhost:8080/post/home",
+        url: "http://localhost:8080/post/home/"+sizeHome,
         success: function (data) {
             showPost(data.content)
         },
@@ -20,8 +20,27 @@ function getPost() {
     })
 }
 
+let maxScrollY=0;
+let size1=5
+$(window).bind('mousewheel', function(event) {
+    console.log(window.scrollY)
+    if (maxScrollY!=0&&maxScrollY==window.scrollY){
+        size1+=5;
+        getPost(size1)
+    }
+    if (window.scrollY>maxScrollY){
+        maxScrollY=window.scrollY
+    }
 
-    function  showPost(posts){
+
+
+});
+
+
+
+
+
+function  showPost(posts){
         let str=""
         for (const p of posts){
             countLike(p.id)

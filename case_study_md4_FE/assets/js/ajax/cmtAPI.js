@@ -1,45 +1,4 @@
 
-function commentP(id){
-    let idC="cmt"+id
-    let cmt1=document.getElementById(idC);
-    let content=cmt1.value
-    if (content!=""){
-        let cmt={
-            content:content,
-            post: {
-                id:id
-            }
-        }
-        token=localStorage.getItem("token")
-
-        $.ajax({
-            type: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-
-            },
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader ("Authorization", "Bearer " + token);
-            },
-            data: JSON.stringify(cmt),
-
-            url: "http://localhost:8080/comment",
-            success: function (data) {
-                cmt1.value=""
-                addCMT(data)
-
-                demBL(id)
-            },
-            error: function (err) {
-                console.log(err)
-            }
-        })
-    }else {
-        alert("chưa có gì để nhắn cả")
-    }
-
-}
 function  addCMTinCMT(cmt){
     let idallC= "container-reply"+cmt.comment.id
 
@@ -85,6 +44,50 @@ function  addCMT(data){
     )
     countCMTbyCMT(data.id)
 }
+
+
+function commentP(id){
+    let idC="cmt"+id
+    let cmt1=document.getElementById(idC);
+    let content=cmt1.value
+    if (content!=""){
+        let cmt={
+            content:content,
+            post: {
+                id:id
+            }
+        }
+        token=localStorage.getItem("token")
+
+        $.ajax({
+            type: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+
+            },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader ("Authorization", "Bearer " + token);
+            },
+            data: JSON.stringify(cmt),
+
+            url: "http://localhost:8080/comment",
+            success: function (data) {
+                cmt1.value=""
+                addCMT(data)
+
+                demBL(id)
+            },
+            error: function (err) {
+                console.log(err)
+            }
+        })
+    }else {
+        alert("chưa có gì để nhắn cả")
+    }
+
+}
+
 function  commentC(id,postID){
 
     let idcm="cmtincmt"+id;
@@ -133,8 +136,10 @@ function  commentC(id,postID){
 
 
 }
+
+
 function showCMTbyPost(comments,id){
-    size=5;
+
     let idallC= "allcmt"+id
     let str=""
     for (const c of comments) {
@@ -209,12 +214,16 @@ function showCMTbyCMT(comments,id,postID){
     }
 
 }
+
+
+
 function show_comment(id){
     if(is_show) {
         document.getElementById(id).style.display = "none";
         is_show = false;
     }
     else{
+
         $.ajax({
             type: "GET",
             headers: {
@@ -229,6 +238,7 @@ function show_comment(id){
             //xử lý khi thành công
             success: function (data) {
                 showCMTbyPost(data.content,id)
+                CMTgoc(id,data.content)
             },
             error: function (err) {
                 console.log(err)
@@ -241,7 +251,6 @@ function show_comment(id){
 
 function show_reply(id,postID){
     let idc="container-reply1"+id
-    console.log(idc)
     if(is_reply) {
         document.getElementById(idc).style.display= "none";
         is_reply = false;
@@ -256,13 +265,12 @@ function show_reply(id,postID){
             beforeSend: function (xhr) {
                 xhr.setRequestHeader ("Authorization", "Bearer " + token);
             },
-            url: "http://localhost:8080/comment/recmt/"+id+"?size="+5,
+            url: "http://localhost:8080/comment/recmt/"+id,
 
             //xử lý khi thành công
 
             success: function (data) {
-                console.log(data.content)
-                showCMTbyCMT(data.content,id,postID)
+                showCMTbyCMT(data,id,postID)
             },
             error: function (err) {
                 console.log(err)
@@ -272,8 +280,16 @@ function show_reply(id,postID){
         is_reply = true;
     }
 }
-function  loadCMT(id){
 
+let size=5;
+let idPost;
+function  loadCMT(id){
+    if (idPost!=id){
+        size=10;
+    }else {
+        size+=5;
+    }
+    idPost=id;
     $.ajax({
         type: "GET",
         headers: {
@@ -287,10 +303,40 @@ function  loadCMT(id){
 
         //xử lý khi thành công
         success: function (data) {
-             // size+=data.content.length;
-
-            console.log(size)
             showCMTbyPost(data.content,id)
+            CMTgoc(id,data.content)
+
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    })
+}
+
+function  CMTgoc(id,cmts){
+
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader ("Authorization", "Bearer " + token);
+        },
+        url: "http://localhost:8080/comment/demblver2/"+id,
+
+        //xử lý khi thành công
+        success: function (data) {
+            let moreCMTid="moreCMT"+id;
+            if (data<=cmts.length){
+                document.getElementById(moreCMTid).style.display="none"
+
+            }else {
+                document.getElementById(moreCMTid).style.display="block"
+            }
+
+
         },
         error: function (err) {
             console.log(err)

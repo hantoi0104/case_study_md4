@@ -5,33 +5,6 @@ let is_show_create_post = false;
 let is_show_chat_one_one =false;
 
 
-$('body').on('DOMMouseScroll', function(e){
-    if(e.originalEvent.detail < 0) {
-        console.log('up 2');
-    }
-    else {
-        console.log('down 2');
-    }
-});
-// let scrollP=0;
-// let maxScroll=0;
-// $(window).bind('mousewheel', function(event) {
-//     if (event.originalEvent.wheelDelta >= 0) {
-//        scrollP--;
-//         console.log(scrollP)
-//
-//     }
-//     else {
-//        maxScroll=++scrollP;
-//         console.log(maxScroll)
-//         console.log(scrollP)
-//        if (maxScroll%10==0){
-//            console.log(1)
-//        }
-//
-//     }
-// });
-
 
 
 
