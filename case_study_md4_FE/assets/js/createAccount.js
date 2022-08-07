@@ -65,7 +65,7 @@ function checkmail(data) {
             }
         }
     }
-    document.getElementById('erorEmail').innerHTML = "email đã tồn tai";
+    document.getElementById('erorEmail').innerHTML = " email đã tồn tai";
 }
 
 

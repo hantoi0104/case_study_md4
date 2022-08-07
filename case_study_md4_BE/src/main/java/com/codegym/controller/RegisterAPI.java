@@ -22,4 +22,11 @@ public class RegisterAPI {
     public List<Account> getAll(){
         return accountService.getAll();
     }
+
+    @GetMapping ("/api/register/search")
+        public List<Account> search(@RequestParam(defaultValue = "") String fullName){
+        return accountService.finByFullName(fullName);
+    }
+
+
 }

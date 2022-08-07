@@ -31,4 +31,8 @@ public class AccountService implements UserDetailsService {
     public Account save(Account account){
         return iAccountRepository.save(account);
     }
+
+    public List<Account> finByFullName(String fullName){
+        return iAccountRepository.findAllByFullNameContaining(fullName);
+    }
 }

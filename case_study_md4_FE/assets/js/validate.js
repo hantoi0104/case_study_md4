@@ -10,23 +10,23 @@ function FromValidate()
     let errorPass = document.getElementById('errorPass');
 
     if (fullname =='' || fullname == null) {
-        errorName.innerHTML = "Họ tên không được để trống!";
+        errorName.innerHTML = " Họ tên không được để trống!";
     } else if (!regexName.test(fullname)) {
-        errorName.innerHTML = "Họ tên không hợp lệ!";
+        errorName.innerHTML = " Họ tên không hợp lệ!";
     } else {
         errorName.innerHTML = '';
     }
 
     if (email == '' || email == null) {
-        errorEmail.innerHTML = "Email không được để trống!";
+        errorEmail.innerHTML = " Email không được để trống!";
     } else if (!reGexEmail.test(email)) {
-        errorEmail.innerHTML = "Email không hợp lệ!";
+        errorEmail.innerHTML = " Email không hợp lệ!";
     } else {
         errorEmail.innerHTML = '';
     }
 
     if (password == '' || password == null) {
-        errorPass.innerHTML = "Mật khẩu vui lòng không để trống!";
+        errorPass.innerHTML = " Mật khẩu vui lòng không để trống!";
     } else {
         errorPass.innerHTML = "";
     }
@@ -35,9 +35,9 @@ function FromValidate()
     let errorConPass = document.getElementById('errorConPass');
 
     if (password_confirmation == '' || password_confirmation == null) {
-        errorConPass.innerHTML = "Xác nhận mật khẩu vui lòng không để trống!";
+        errorConPass.innerHTML = " Xác nhận mật khẩu vui lòng không để trống!";
     }else if(password_confirmation !== password){
-        alert("Xác nhận mật khẩu không trùng khớp!");
+        alert(" Xác nhận mật khẩu không trùng khớp!");
     }else{
         errorConPass.innerHTML = "";
     }
