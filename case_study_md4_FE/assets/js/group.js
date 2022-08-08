@@ -4,7 +4,6 @@ getAccData();
 
 
 
-
 function getAccData(){
     let token = localStorage.getItem("token")
     $.ajax({
