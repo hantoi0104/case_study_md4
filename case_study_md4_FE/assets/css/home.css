@@ -221,7 +221,7 @@ window-chat-top .search-message {
     display: block;
     background-color: #ffffff;
     position: absolute;
-    top: 260px;
+    top: 50px;
     /*260*/
     right: 100px;
     border-radius: 5px 5px 5px 5px;
@@ -262,6 +262,55 @@ window-chat-top .search-message {
     height: 80%;
     overflow-y: scroll
 }
+.chat-one-one-middle .box-index-message-sender{
+    display: flex;
+    justify-content: right;
+    border-radius: 25px;
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+.box-index-message-sender div{
+    background-color: #4f77ff;
+    border-radius: 15px;
+    padding: 15px 15px 15px 15px;
+    color: white;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.box-index-message-sender img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-top: 7px;
+}
+
+.chat-one-one-middle .box-index-message-receiver{
+    display: flex;
+    justify-content: left;
+    border-radius: 25px;
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+.box-index-message-receiver div{
+    background-color: #e7e7e7;
+    border-radius: 15px;
+    padding: 15px 15px 15px 15px;
+    color: #000000;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.box-index-message-receiver img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-top: 7px;
+}
+
+
 
 .chat-one-one-bottom {
     height: 10%;
@@ -318,10 +367,13 @@ window-chat-top .search-message {
     margin-top: 10px;
 }
 
-.send-message-button p{
-    margin-top: 8px;
-    font-family: Roboto;
-    font-size: 14px;;
+.send-message-button:hover{
+    background-color: #0a61d9;
+}
+
+.send-message-button:active{
+    background-color: #0a61d9;
+    border: 2px solid #549ad7;
 }
 
 .send-message-button{
@@ -337,7 +389,8 @@ window-chat-top .search-message {
 .send-message-button p{
     margin-top: 8px;
     font-family: Roboto;
-    font-size: 13px;;
+    font-size: 13px;
+    background-color: transparent;
 }
 
 

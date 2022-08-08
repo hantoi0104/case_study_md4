@@ -38,6 +38,9 @@ $('#chat_icon').click(function(){
 function close_chat(){
     document.querySelector(".nav-right-window-chat").style.display = "none";
 }
+function open_chat(){
+    document.querySelector(".nav-right-window-chat").style.display = "block";
+}
 
 // Open create post
 function open_create_post(){
@@ -65,16 +68,6 @@ function close_post() {
     }
 }
 
-function openChat(id, fullName, avatar, email, status) {
-    document.querySelector(".nav-right-window-chat-one-one").style.display = "block";
-    document.querySelector(".info-chat-one img").src = avatar;
-    document.querySelector(".name-friend-chat-one").innerHTML = fullName;
-    document.querySelector(".nav-right-window-chat").style.display = "none";
-}
-
-function close_chat_one_one() {
-    document.querySelector(".nav-right-window-chat-one-one").style.display = "none";
-}
 
 
 
