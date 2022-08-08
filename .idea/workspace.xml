@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f5045254-9ad7-4df9-999d-af9be50f52c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study_md4_BE/src/main/java/com/codegym/models/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_md4_BE/src/main/java/com/codegym/models/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study_md4_BE/src/main/java/com/codegym/repository/IProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_md4_BE/src/main/java/com/codegym/repository/IProfileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study_md4_BE/src/main/java/com/codegym/service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_md4_BE/src/main/java/com/codegym/service/ProfileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case_study_md4_FE/views/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_md4_FE/views/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +20,14 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,6 +53,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -51,6 +63,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Windows\Desktop\case_study_md4\case_study_md4_FE\assets\js" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="CaseStudyMd4Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -77,6 +94,9 @@
       <workItem from="1659601244399" duration="545000" />
       <workItem from="1659621181322" duration="3714000" />
       <workItem from="1659668597244" duration="3555000" />
+      <workItem from="1659710481050" duration="314000" />
+      <workItem from="1659753159807" duration="2142000" />
+      <workItem from="1659839109172" duration="10029000" />
     </task>
     <servers />
   </component>
@@ -89,6 +109,11 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">

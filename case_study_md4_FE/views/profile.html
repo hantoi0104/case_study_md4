@@ -174,27 +174,37 @@
             </div>
             <div  style=" justify-content: space-between; display: flex;">
                 <h2 style="margin-top: 10px">Ảnh</h2><br>
-                <img style="margin:auto;width:60px;height: 60px;border-radius: 50%" src="https://taimienphi.vn/tmp/cf/aut/anh-gai-xinh-1.jpg" required>
+                <img id="img" style="margin:auto;width:60px;height: 60px;border-radius: 50%" src="https://taimienphi.vn/tmp/cf/aut/anh-gai-xinh-1.jpg" required>
+                <input type="file" id="imgEdit" placeholder="chọn ảnh">
             </div>
             <div style=" justify-content: space-between; display: flex;margin: .5rem">
 
-                <label>Name</label>
-                <input style="text-align: left" type="text" required>
+                <label>Họ và tên</label>
+                <input id="nameEdit" style="text-align: left" type="text" required>
             </div>
             <div style=" justify-content: space-between; display: flex;margin: .5rem">
                 <label>Email</label>
-                <input type="text" required>
+                <input id="email" type="text" required>
+            </div>
+            <div style=" justify-content: space-between; display: flex;margin: .5rem">
+                <label>Sinh nhật</label>
+                <input  id="date" type="text" required>
+            </div>
+            <div style=" justify-content: space-between; display: flex;margin: .5rem">
+                <label>Giới tính</label>
+                <input id="sex" type="text" required>
+            </div>
+            <div style=" justify-content: space-between; display: flex;margin: .5rem">
+                <label>Số điện thoại</label>
+                <input id="phone" type="text" required>
             </div>
 
 
             <div style=" justify-content: space-between; display: flex;margin: .5rem">
                 <label>Address</label>
-                <input type="text" required>
+                <input id="address" type="text" required>
             </div>
-            <div style=" justify-content: space-between; display: flex;margin: .5rem">
-                <label>Phone</label>
-                <input type="text" required>
-            </div>
+
             <div style="margin-left: 150px">
                 <td>
                     <tr> <button>save</button> </tr>
@@ -253,9 +263,9 @@
             <li class="dropdown">
                 <button style=" font-size: 15px ;border: none ;border-radius: 5px ; background: #bdb7b7">Xem thêm</button>
                 <div class="dropdown-content">
-                    <a href="#">Edit profile</a>
-                    <a href="#">Doi</a>
-                    <a href="#">Link 3</a>
+                    <a href="#">Thể thao</a>
+                    <a href="#">Âm nhạc</a>
+                    <a href="#">Phim </a>
                 </div>
             </li>
         </ul>
@@ -275,6 +285,8 @@
                 <p style="margin-left: 40px;font-family: 'Times New Roman';"><i class="fas fa-graduation-cap"></i>đang học tại giao thông vận tải</p>
                 <p style="margin-left: 40px;font-family: 'Times New Roman';"><i class="fas fa-graduation-cap"></i>da hoc tai giao thong van tai</p>
                 <p style="margin-left: 40px;font-family: 'Times New Roman';"><i class="fas fa-map-marker-alt"></i>da hoc tai giao thong van tai</p>
+                <p style="margin-left: 40px;font-family: 'Times New Roman';"><i class="fas fa-calendar-week"></i>Tham gia vào Tháng 12 năm 2014</p>
+
                 <div style="margin-left: 200px;margin-right: 200px;background: #b3b6c2;border-radius: 20px"><h3 style="margin-left: 10px">thêm tiểu sử</h3></div>
 
 
@@ -344,67 +356,18 @@
 
 
 <!--show create post-->
-    <div class="container-create-post" >
+    <div class="container-create-post">
         <div class="top-create-post">
             <div></div>
             <div style="margin-top: 7px">
                 <span> Tạo bài viết</span>
             </div>
-            <div onclick="close_edit()">
-                <i class="fas fa-window-close" style="color: #d00000; padding: 20px 20px 20px 20px; font-size: 18px"></i>
+            <div onclick="close_post()">
+                <i class="fas fa-window-close"
+                   style="color: #d00000; padding: 20px 20px 20px 20px; font-size: 18px"></i>
             </div>
         </div>
-        <div class="body-create-post" >
-            <div id="acc-info">
-                <div class='dp' >
-                    <img width="100%"   alt="">
-                </div>
-                <div style="padding-left:15px ;width: 150px;height: 50px;margin: 6px">
-                    <h5 style="padding-bottom: 5px">Hoàng Công Hậu</h5>
-                    <select id="selectpermision" style="min-width: 50px;border-radius: 5px">
-                        <option class="option">Bạn bè</option>
-                        <option class="option">Chỉ mình tôi</option>
-                        <option class="option">Công khai</option>
-                    </select>
-                </div>
-            </div>
-            <div style="overflow: auto;width: auto;height: 180px" >
-                <div>
-                    <textarea  style=" border-radius: 20px; height: 100px;width: 100%" placeholder="Hậu ơi bạn đang nghĩ gì ?"></textarea>
-                </div>
-                <div id="img" style=" display: none; justify-content: space-between">
-                    <img style="width: 300px;height: auto;margin: auto" id="image" src=""  alt="">
 
-                    <div onclick="close_post()">
-                        <i class="fas fa-window-close" style="color: gray; padding: 20px 20px 20px 20px; font-size: 18px"></i>
-                    </div>
-                </div>
-            </div>
-            <div  style="    display: flex;
-                        justify-content: left;
-                        width: auto;
-                        height: 40px;
-                        border: black 1px solid;
-                        padding: 10px;
-                        border-radius: 10px;
-                        margin-top: 10px;
-                    ">
-                <h5 style="padding-right: 10px">Thêm vào bài viết của bạn</h5>
-                <div class="action">
-                    <label for="inputFile"><i style="color: red" class="fa fa-image"></i>
-                        <span style="color: red" >Photo/Video</span></label>
-                    <input type="file" id="inputFile" onchange="choosefile(this)"  hidden >
-                    <input type="file" id="duphong"  hidden>
-
-                </div>
-            </div>
-            <button style="     width: 520px;
-                            margin-top: 10px;
-                            height: 25px;
-                            background-color: #3069D9;
-                            border-radius: 4px;" onclick="createPost()"
-            >Đăng</button>
-        </div>
     </div>
 
 
