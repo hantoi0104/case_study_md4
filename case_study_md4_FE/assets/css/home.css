@@ -35,6 +35,8 @@ nav .nav-left .search {
     margin-left: 15px;
 }
 
+
+
 nav .nav-left > img {
     width: 40px;
 }
@@ -747,4 +749,12 @@ window-chat-top .search-message {
     width: 100%;
     height: 100%;
     z-index: 1000;
+}
+ .search-top{
+     margin-top:35px;
+    display: block;
+    position: absolute;
+    border-radius: 0px 25px 25px 0px;
+    width: 350px;
+    background-color: #ffffff;
 }

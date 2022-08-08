@@ -100,8 +100,8 @@ function showSearch(data, search) {
     } else {
         for (const d of data) {
             str += ` <tr>
-            <td><img src="${d.avatar}" width="50" height="50"></td>
-            <td>${d.fullName}</td>
+            <td><img src="${d.avatar}" width="50" height="50" alt="Logo" style="border-radius: 50%"></td>
+            <td style="display: flex;justify-content: center " >${d.fullName}</td>
         </tr>`;
         }
     }
