@@ -59,8 +59,9 @@ public class GroupAPI {
         return groupService.findById(id);
     }
 
-    @PutMapping
+    @PostMapping("/edit")
     public void edit(@RequestBody Group group){
+        group.setAdmin(userAPI.getAccount());
         groupService.save(group);
     }
 
