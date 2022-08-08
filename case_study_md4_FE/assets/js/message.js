@@ -99,6 +99,7 @@ function append_Window_Chat(id, fullName, avatar, email, status) {
         //Call ajax lấy tin nhắn
         getMessageByFriend(id);
         document.querySelector(".nav-right-window-chat").style.display = "none";
+        document.querySelector(".chat-one-one-middle").scrollTop = 300;
     }
 }
 
