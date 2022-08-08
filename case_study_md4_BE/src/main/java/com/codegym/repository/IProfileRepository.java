@@ -1,8 +1,13 @@
 package com.codegym.repository;
 
 import com.codegym.models.Profile;
-import org.springframework.data.repository.CrudRepository;
 
-public interface IProfileRepository extends CrudRepository<Profile, Long> {
+import java.util.List;
 
+public interface IProfileRepository  {
+
+    Profile findById(Long id);
+    List<Profile> getAll();
+Profile save(Profile profile);
+    void delete(Long id);
 }

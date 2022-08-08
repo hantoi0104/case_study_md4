@@ -18,5 +18,5 @@ public class Profile {
 
     private int phoneNumber;
     private String country;
-    private Date createDay;
+
 }
