@@ -1,4 +1,56 @@
 getData();
+getAccountGroup();
+getAccData();
+
+function getAccountGroup(){
+    let token = localStorage.getItem("token")
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Accept': 'application/json'
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader ("Authorization", "Bearer " + token);
+        },
+        url: "http://localhost:8080/api/user",
+        success: function (data) {
+            console.log(data)
+            show_Account(data)
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    })
+}
+
+function show_Account(account){
+    document.querySelector("nav .nav-right .profile").style.backgroundImage = `url("${account.avatar}")`
+    document.getElementById("nameAcc").innerHTML = account.fullName
+}
+
+
+function getAccData(){
+    let token = localStorage.getItem("token")
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        url: "http://localhost:8080/groups/GroupAcc" ,
+        //xử lý khi thành công
+        success: function (data) {
+            showData(data);
+            // showAllGroup(data);
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    })
+}
 
 function getData() {
     let token = localStorage.getItem("token")
@@ -14,7 +66,7 @@ function getData() {
         url: "http://localhost:8080/groups",
         //xử lý khi thành công
         success: function (data) {
-            showData(data);
+            // showData(data);
             showAllGroup(data);
         },
         error: function (err) {
@@ -59,6 +111,29 @@ function showDetail(id){
         success: function (data) {
     localStorage.setItem("id",data.id);
     location.href = "group_detail.html"
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    })
+}
+
+function showGroupFind(id){
+    let token = localStorage.getItem("token")
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        url: "http://localhost:8080/groups/" + id,
+        //xử lý khi thành công
+        success: function (data) {
+            localStorage.setItem("id",data.id);
+            location.href = "group_find.html"
         },
         error: function (err) {
             console.log(err)
@@ -138,7 +213,7 @@ function searchG() {
         url: "http://localhost:8080/groups/search?name=" + search,
         //xử lý khi thành công
         success: function (data) {
-            showJoined(data);
+            showAllGroup(data);
         },
         error: function (err) {
             console.log(err)
@@ -152,12 +227,11 @@ function showAllGroup(data) {
         // console.log(g)
         str += `
 <!--                <div onclick="showDetail(${g.id})" id="result" style="display: none">-->
-                <div onclick="showDetail(${g.id})">
+                <div onclick="showGroupFind(${g.id})">
                     <span class='page' href="#">
                         <img src="${g.coverGroupImg}" style="width: 70px;height: 70px; border-radius: 7px;" >
                         <p style="font-size: 18px">${g.groupName}</p><br>
                         <p style="font-size: 15px">( ${g.status} )</p>
-<!--                <p>- Ngày tạo<span>(${g.gcreate})</span></p>-->
                 </div>
                 `;
     }

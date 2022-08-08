@@ -45,5 +45,4 @@ function getAllFriend(){
 function show_Account(account){
     document.querySelector("nav .nav-right .profile").style.backgroundImage = `url("${account.avatar}")`
     document.querySelector(".container .left-panel .profile").style.backgroundImage = `url("${account.avatar}")`
-
 }
