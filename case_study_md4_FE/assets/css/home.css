@@ -909,3 +909,33 @@ textarea {
     border-radius: 50%;
     margin-top: 7px;
 }
+.search-top{
+    margin-top:44px;
+    display: block;
+    position: absolute;
+    border-radius: 10px;
+    width: 320px;
+    background-color: white;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+
+.item-search{
+    margin: 28px;
+    display: flex;
+    justify-content: left;
+    height: 50px;
+    width: 265px;
+    border-radius: 10px;
+    background-color: orange;
+
+}
+.item-search:nth-child(odd){
+    background-color: gray;
+
+}
+.user-Name-search{
+    margin: 10px;
+}

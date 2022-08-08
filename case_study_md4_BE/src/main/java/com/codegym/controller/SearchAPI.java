@@ -14,10 +14,10 @@ import java.util.List;
 public class SearchAPI {
     @Autowired
     AccountService accountService;
-    @GetMapping("/acc/{name}")
-    public List<Account>  searchAcc(@PathVariable String name){
-        return accountService.searchByName(name);
-    }
+//    @GetMapping("/acc/{name}")
+//    public List<Account>  searchAcc(@PathVariable String name){
+//        return accountService.searchByName(name);
+//    }
 
 
 }

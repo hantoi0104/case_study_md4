@@ -32,7 +32,16 @@ public class AccountService implements UserDetailsService {
         return account;
     }
 
-    public List<Account> searchByName(String name){
-        return  iAccountRepository.findAllByFullNameContainingIgnoreCase(name);
+
+
+    public List<Account> getAll(){
+        return (List<Account>) iAccountRepository.findAll();
+    }
+    public Account save(Account account){
+        return iAccountRepository.save(account);
+    }
+
+    public List<Account> finByFullName(String fullName){
+        return iAccountRepository.findAllByFullNameContaining(fullName);
     }
 }

@@ -17,10 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoginAPI {
     @Autowired
     JwtService jwtService;
-
     @Autowired
     private AuthenticationManager authenticationManager;
-
     @PostMapping("/api/login")
     public String login(@RequestBody Account account){
         try {
@@ -28,13 +26,9 @@ public class LoginAPI {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(account.getEmail(),account.getPassWord()));
             SecurityContextHolder.getContext().setAuthentication(authentication);
-
-
-
             String token = jwtService.createToken(authentication);
             return token;
         } catch (Exception e) {
-
             return "";
         }
 
