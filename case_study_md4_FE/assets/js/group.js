@@ -2,31 +2,7 @@ getData();
 getAccountGroup();
 getAccData();
 
-function getAccountGroup(){
-    let token = localStorage.getItem("token")
-    $.ajax({
-        type: "GET",
-        headers: {
-            'Accept': 'application/json'
-        },
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader ("Authorization", "Bearer " + token);
-        },
-        url: "http://localhost:8080/api/user",
-        success: function (data) {
-            console.log(data)
-            show_Account(data)
-        },
-        error: function (err) {
-            console.log(err)
-        }
-    })
-}
 
-function show_Account(account){
-    document.querySelector("nav .nav-right .profile").style.backgroundImage = `url("${account.avatar}")`
-    document.getElementById("nameAcc").innerHTML = account.fullName
-}
 
 
 function getAccData(){
@@ -79,7 +55,7 @@ function showData(data) {
     for (const g of data) {
         console.log(g)
         str += `
-            <li onclick="showDetail(${g.id})">
+            <li onclick="showDetail()">
 <!--                <span class="fa fa-user-friends"></span>-->
                 <span><img src="${g.coverGroupImg}" style="width: 80px;height: 80px; border-radius: 7px;" ></span>
                 <div style="margin-left: 30px;width: 120px">
@@ -95,27 +71,27 @@ function showData(data) {
     document.getElementById("showGroup").innerHTML = str;
 }
 
-function showDetail(id){
-    let token = localStorage.getItem("token")
-    $.ajax({
-        type: "GET",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token);
-        },
-        url: "http://localhost:8080/groups/" + id,
-        //xử lý khi thành công
-        success: function (data) {
-    localStorage.setItem("id",data.id);
+function showDetail(){
+    // let token = localStorage.getItem("token")
+    // $.ajax({
+    //     type: "GET",
+    //     headers: {
+    //         'Accept': 'application/json',
+    //         'Content-Type': 'application/json'
+    //     },
+    //     beforeSend: function (xhr) {
+    //         xhr.setRequestHeader("Authorization", "Bearer " + token);
+    //     },
+    //     url: "http://localhost:8080/groups/" + id,
+    //     //xử lý khi thành công
+    //     success: function (data) {
+    // localStorage.setItem("id",data.id);
     location.href = "group_detail.html"
-        },
-        error: function (err) {
-            console.log(err)
-        }
-    })
+    //     },
+    //     error: function (err) {
+    //         console.log(err)
+    //     }
+    // })
 }
 
 function showGroupFind(id){
@@ -224,19 +200,41 @@ function searchG() {
 function showAllGroup(data) {
     let str = "";
     for (const g of data) {
-        // console.log(g)
+        console.log(g)
         str += `
-<!--                <div onclick="showDetail(${g.id})" id="result" style="display: none">-->
                 <div onclick="showGroupFind(${g.id})">
                     <span class='page' href="#">
                         <img src="${g.coverGroupImg}" style="width: 70px;height: 70px; border-radius: 7px;" >
-                        <p style="font-size: 18px">${g.groupName}</p><br>
+                        <p style="font-size: 18px;margin-left: 30px">${g.groupName}</p><br>
                         <p style="font-size: 15px">( ${g.status} )</p>
                 </div>
                 `;
     }
     document.getElementById("myGroup").innerHTML = str;
-    // if (document.getElementById("search").value !== ""){
-    //     document.getElementById("result").style = 'block';
-    // }
+}
+
+function getAccountGroup(){
+    let token = localStorage.getItem("token")
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Accept': 'application/json'
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader ("Authorization", "Bearer " + token);
+        },
+        url: "http://localhost:8080/api/user",
+        success: function (data) {
+            console.log(data)
+            show_Account(data)
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    })
+}
+
+function show_Account(account){
+    document.querySelector("nav .nav-right .profile").style.backgroundImage = `url("${account.avatar}")`
+    document.getElementById("nameAcc").innerHTML = account.fullName
 }
