@@ -22,10 +22,14 @@ public class GroupAPI {
     @Autowired
     UserAPI userAPI;
 
-    @GetMapping
+    @GetMapping("/GroupAcc")
     public List<Group> getAllByUser() {
         Account account=userAPI.getAccount();
         return groupService.getAllByAcc(account);
+    }
+    @GetMapping
+    public List<Group> getAllGroup() {
+        return groupService.getAllGroup();
     }
 
     @PostMapping

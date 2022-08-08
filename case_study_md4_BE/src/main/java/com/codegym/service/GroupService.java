@@ -17,6 +17,10 @@ public class GroupService {
         return groups;
     }
 
+    public List<Group> getAllGroup(){
+        return iGroupRepository.getAllGroup();
+    }
+
     public void save(Group group){
         iGroupRepository.save(group);
     }
