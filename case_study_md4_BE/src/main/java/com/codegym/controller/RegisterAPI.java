@@ -13,20 +13,19 @@ import java.util.List;
 public class RegisterAPI {
     @Autowired
     AccountService accountService;
+
     @PostMapping("/api/register")
-    public Account save(@RequestBody Account account){
+    public Account save(@RequestBody Account account) {
         return accountService.save(account);
     }
 
     @GetMapping("/api/register")
-    public List<Account> getAll(){
+    public List<Account> getAll() {
         return accountService.getAll();
     }
 
-    @GetMapping ("/api/register/search")
-        public List<Account> search(@RequestParam(defaultValue = "") String fullName){
+    @GetMapping("/api/register/search")
+    public List<Account> search(@RequestParam(defaultValue = "") String fullName) {
         return accountService.finByFullName(fullName);
     }
-
-
 }

@@ -69,7 +69,43 @@ function checkmail(data) {
 }
 
 
+function search() {
+    let search = document.getElementById("search").value;
+    console.log("hmmm")
+    console.log(search)
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        url: "http://localhost:8080/api/register/search?fullName=" + search,
+        //xử lý khi thành công
+        success: function (data) {
+            console.log(data)
+            console.log(search)
+            showSearch(data, search);
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    })
 
+}
 
+function showSearch(data, search) {
+    let str = " ";
+    if (search == "") {
+        str == ""
+    } else {
+        for (const d of data) {
+            str += ` <tr>
+            <td><img src="${d.avatar}" width="50" height="50"></td>
+            <td>${d.fullName}</td>
+        </tr>`;
+        }
+    }
+    document.getElementById("show").innerHTML = str;
+}
 
 
