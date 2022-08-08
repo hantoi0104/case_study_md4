@@ -10,7 +10,8 @@ import java.util.List;
 public interface IMessageRepository extends CrudRepository<Message, Long> {
     @Query(value = "select * from Message where sender_id =:admin_id and receiver_id =:friend_id\n" +
             "UNION\n" +
-            "select * from Message where sender_id =:friend_id and receiver_id =:admin_id ", nativeQuery = true)
+            "select * from Message where sender_id =:friend_id and receiver_id =:admin_id\n "+
+            "order by date DESC", nativeQuery = true)
     List<Message> findByAccountBeforeAndAccountAfter( @Param("admin_id") long admin_id, @Param("friend_id") long friend_id );
 
 }
