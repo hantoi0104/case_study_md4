@@ -28,11 +28,14 @@ public class LoginAPI {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(account.getEmail(),account.getPassWord()));
             SecurityContextHolder.getContext().setAuthentication(authentication);
+
+
+
             String token = jwtService.createToken(authentication);
             return token;
         } catch (Exception e) {
 
-            return e.getMessage();
+            return "";
         }
 
     }

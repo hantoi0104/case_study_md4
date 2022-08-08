@@ -20,9 +20,15 @@ public class LikeAPI {
     @PostMapping
     public void likeObject(@RequestBody Likes likes){
         likes.setAccount(userAPI.getAccount());
-        likeService.check(likes);
+        likeService.save(likes);
     }
-
+    @GetMapping("/check/{id}")
+    public Likes check(@PathVariable long id){
+        Likes likes=new Likes();
+        likes.setAccount(userAPI.getAccount());
+        likes.setPost(postService.findById(id));
+        return likeService.check(likes);
+    }
 
     @GetMapping("/{id}")
     public int count(@PathVariable long id){

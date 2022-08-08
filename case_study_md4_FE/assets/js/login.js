@@ -16,8 +16,12 @@ $(document).ready(function () {
                 data: JSON.stringify(account),
                 //xử lý khi thành công
                 success: function (data) {
-                    localStorage.setItem("token", data);
-                    location.href = "home.html"
+                    if (data!=''){
+                        localStorage.setItem("token", data);
+                        location.href = "home.html"
+                    }else {
+                        alert("Tài Khoản hoặc mật khẩu không chính xác")
+                    }
                 },
                 error: function (err) {
                     console.log(err)

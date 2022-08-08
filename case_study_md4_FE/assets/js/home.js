@@ -24,6 +24,9 @@ $('#chat_icon').click(function(){
 function close_chat(){
     document.querySelector(".nav-right-window-chat").style.display = "none";
 }
+function open_chat(){
+    document.querySelector(".nav-right-window-chat").style.display = "block";
+}
 
 // Open create post
 function open_create_post(){
@@ -58,5 +61,7 @@ function getFriend() {
         }
     })
 }
+
+
 
 

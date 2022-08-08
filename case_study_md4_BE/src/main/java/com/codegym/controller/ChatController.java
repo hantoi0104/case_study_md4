@@ -1,28 +1,35 @@
 package com.codegym.controller;
 
 import com.codegym.models.Message;
+import com.codegym.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
-@RestController
+import java.security.Principal;
+import java.util.Date;
+
+@Controller
 public class ChatController {
+    @Autowired
+    MessageService messageService;
     @Autowired
     private SimpMessagingTemplate simpMessagingTemplate;
 
-    @MessageMapping("/message")
+    @MessageMapping("/hello")
     @SendTo("/chatroom/public")
-    public Message receiveMessage(@Payload Message message){
+    public Message receiveMessage(@Payload Message message) {
         return message;
     }
 
     @MessageMapping("/private-message")
-    public Message recMessage(@Payload Message message){
-        simpMessagingTemplate.convertAndSendToUser(message.getReceiver().getFullName(),"/private",message);
-        System.out.println(message.toString());
+    public Message sendMessage(@Payload Message message){
+        message.setDate(new Date());
+        messageService.save(message);
+        simpMessagingTemplate.convertAndSendToUser(message.getReceiver().getEmail(),"/private", message);
         return message;
     }
 }

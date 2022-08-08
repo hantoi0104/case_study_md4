@@ -13,17 +13,19 @@ public class LikeService {
     @Autowired
     PostService postService;
     public void save(Likes like){
-        iLikeRepository.save(like);
-    }
-    public void check(Likes likes){
-        Likes likes1=iLikeRepository.findLikesByAccountAndPost(likes.getAccount(),postService.findById(likes.getPost().getId()));
-
-        if (likes1==null){
-            save(likes);
+        Likes likes=check(like);
+        if (likes==null){
+            iLikeRepository.save(like);
         }else
         {
-            remove(likes1);
+            remove(likes);
         }
+
+    }
+    public Likes check(Likes likes){
+        Likes likes1=iLikeRepository.findLikesByAccountAndPost(likes.getAccount(),postService.findById(likes.getPost().getId()));
+
+       return likes1;
 
     }
 

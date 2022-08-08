@@ -22,18 +22,23 @@ function getPost(sizeHome) {
 
 let maxScrollY=0;
 let size1=5
+let c=0
 $(window).bind('mousewheel', function(event) {
-    if (maxScrollY!=0&&maxScrollY==window.scrollY){
-        size1+=5;
-        getPost(size1)
+        c++
+    let y=window.scrollY
+
+    if (c==10){
+        if (maxScrollY!=0&&maxScrollY==y){
+            size1+=5;
+            getPost(size1)
+        }
+        c=0
     }
-    if (window.scrollY>maxScrollY){
-        maxScrollY=window.scrollY
+    if (y>maxScrollY){
+        maxScrollY=y
     }
-
-
-
 });
+
 
 function checkdate(datePost){
     let now=new Date();
@@ -58,10 +63,8 @@ function checkdate(datePost){
 
 
 
-
 function  showPost(posts){
         let str=""
-
         for (const p of posts){
             countLike(p.id)
             let dateP=new Date(p.datePost);
@@ -85,7 +88,7 @@ function  showPost(posts){
             <div class="container-post-bottom">
                 <div class="quantity-like-comment">
                     <div class="quantity-like">
-                        <i class="fas fa-thumbs-up" style="color: #ffffff;
+                        <i class="fas fa-thumbs-up"  style="color: #ffffff;
                          background-color: #0076e7; font-size: 10px; border-radius: 50%; padding: 5px"></i>
                         <span id="soLike${p.id}"></span>
                     </div>
@@ -95,8 +98,9 @@ function  showPost(posts){
                     </div>
                 </div>
                 <div class="post-bottom">
-                    <div class="action" onclick="createLike(${p.id})">
-                        <i class="far fa-thumbs-up"></i>
+                    <div class="action" id="like${p.id}"  style="width: 50px;display: flex;justify-content: space-between" onclick="createLike(${p.id})">
+                        <i class="far fa-thumbs-up" id="not-like${p.id}"></i>
+                        <i class="fas fa-thumbs-up" id="liked${p.id}" style="display: none;"></i>
                         <span>Like</span>
                     </div>
                     <div class="action" onclick="show_comment(${p.id})">
@@ -128,6 +132,12 @@ function  showPost(posts){
 
         }
         document.getElementById("timeLine").innerHTML=str
+
+        for (const p of posts){
+            checkLike(p.id)
+        }
+
+
         let moreCmt=document.querySelectorAll(".moreCMT")
         for (let i = 0; i <moreCmt.length ; i++) {
             moreCmt[i].addEventListener('click',function (ev){
