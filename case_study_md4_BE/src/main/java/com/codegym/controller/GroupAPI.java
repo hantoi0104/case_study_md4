@@ -49,7 +49,7 @@ public class GroupAPI {
         return "/case_study_md4_FE/assets/img/imgGroup/"+name;
     }
 
-    @DeleteMapping("/{id}")
+    @GetMapping("/delete/{id}")
     public void delete(@PathVariable long id){
         groupService.delete(id);
     }

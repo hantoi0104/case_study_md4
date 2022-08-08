@@ -16,6 +16,7 @@ public interface IGroupRepository extends CrudRepository<Group,Long> {
 
     @Query(nativeQuery = true, value = "SELECT * FROM case_study_md4.groupsss;")
     List<Group> getAllGroup();
+
     @Query(nativeQuery = true, value = "SELECT * FROM case_study_md4.groupsss where group_name like concat('%',:name,'%');")
     List<Group> findAllByNameContaining(String name);
 }
