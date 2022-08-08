@@ -55,7 +55,7 @@ function showData(data) {
     for (const g of data) {
         console.log(g)
         str += `
-            <li onclick="showDetail()">
+            <li onclick="showDetail(${g.id})">
 <!--                <span class="fa fa-user-friends"></span>-->
                 <span><img src="${g.coverGroupImg}" style="width: 80px;height: 80px; border-radius: 7px;" ></span>
                 <div style="margin-left: 30px;width: 120px">
@@ -71,27 +71,27 @@ function showData(data) {
     document.getElementById("showGroup").innerHTML = str;
 }
 
-function showDetail(){
-    // let token = localStorage.getItem("token")
-    // $.ajax({
-    //     type: "GET",
-    //     headers: {
-    //         'Accept': 'application/json',
-    //         'Content-Type': 'application/json'
-    //     },
-    //     beforeSend: function (xhr) {
-    //         xhr.setRequestHeader("Authorization", "Bearer " + token);
-    //     },
-    //     url: "http://localhost:8080/groups/" + id,
-    //     //xử lý khi thành công
-    //     success: function (data) {
-    // localStorage.setItem("id",data.id);
+function showDetail(id){
+    let token = localStorage.getItem("token")
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        url: "http://localhost:8080/groups/" + id,
+        //xử lý khi thành công
+        success: function (data) {
+    localStorage.setItem("id",data.id);
     location.href = "group_detail.html"
-    //     },
-    //     error: function (err) {
-    //         console.log(err)
-    //     }
-    // })
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    })
 }
 
 function showGroupFind(id){
