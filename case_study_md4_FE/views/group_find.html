@@ -10,26 +10,22 @@
           integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="../assets/css/group.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Buttons/2.0.0/css/buttons.min.css" integrity="sha512-x8eU2Yx8Pd8XjWOTv+S/2jXGe586o6Ow722EaqGwG+4hkWaW1ZSAIMYUAY5QDyMglc9fPT0E1kZRIBwsdggtqg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!--    <title>MediaBook</title>-->
 </head>
 <body>
 <nav>
-    <div class="nav-left" style="position: relative">
+    <div class="nav-left">
         <img src="../assets/img/vietnamLogo.png" alt="Logo">
         <form>
             <div class="search">
-                <input id="search"oninput="searchG()" name="search" type="text" placeholder="Search MediaSocial..">
+                <input id="search" oninput="searchG()" name="search" type="text" placeholder="Search MediaSocial..">
                 <button type="submit" class="btn-search">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
             </div>
         </form>
-<!--        <div style="position: absolute;right: 0;left: 0;top: 100%;height: 500px;background-color: #1b74e4">-->
-
-<!--        </div>-->
     </div>
     <div class="nav-middle">
         <a href="#" class="active">
@@ -52,8 +48,6 @@
     <div class="nav-right">
         <div class="nav-right-icon">
             <span class="profile"></span>
-            <span style="margin-top: 8px;margin-left: 10px" id="nameAcc"></span>
-
 
             <a id="chat_icon" href="#">
                 <i class="fas fa-comment-dots"></i>
@@ -214,30 +208,17 @@
     </div>
 </nav>
 <div class="container">
-    <div class="left-panel" style="width: 450px;background-color: ghostwhite;overflow-x:hidden;
-            overflow-y:auto;">
-        <ul>
+    <div class="left-panel" style="width: 500px;background-color: ghostwhite">
+        <div>
             <div>
-                <li>
-                    <span></span>
-                    <h2>Nhóm</h2>
-                </li>
-                <li>
-                    <span><img src="../assets/img/human.png" style="width: 50px;height: 50px; border-radius: 50%"></span>
-                    <button  onclick="location.href='creategroup.html'" class="button button-3d button-primary button-rounded" style="margin-left: 30px">+ Tạo nhóm mới</a></button>
-                </li>
-                <li>
-                    <hr >
-                </li>
-                <li>
-                    <!--                <span class="profile"></span>-->
-                    <p style="font-size: 20px">Nhóm của bạn</p>
-                </li>
+                <div id="groupFind">
+                </div>
+                <div>
+                </div>
+                <br>
+                <p><img src="../assets/img/iconhome.png"></p>
             </div>
-
-            <div id="showGroup">
-            </div>
-        </ul>
+        </div>
 
         <div class="footer-links">
             <a href="#">Privacy</a>
@@ -249,51 +230,91 @@
 
     <div class="middle-panel" style="background-color: #e4e6eb">
 
-<!--        <div class="story-section">-->
+        <div class="story-section">
 
-<!--            <div class="story create">-->
-<!--                <div class="dp-image">-->
-<!--                    <img src="../assets/img/dp.jpg" alt="Profile pic">-->
-<!--                </div>-->
-<!--                <span class="dp-container">-->
-<!--                        <i class="fa fa-plus"></i>-->
-<!--                    </span>-->
-<!--                <span class="name">Create Story</span>-->
-<!--            </div>-->
+            <div class="story create">
+                <div class="dp-image">
+                    <img src="../assets/img/dp.jpg" alt="Profile pic">
+                </div>
+                <span class="dp-container">
+                        <i class="fa fa-plus"></i>
+                    </span>
+                <span class="name">Create Story</span>
+            </div>
 
-<!--            <div class="story">-->
-<!--                <img src="../assets/img/model.jpg" alt="Anuska's story">-->
-<!--                <div class="dp-container">-->
-<!--                    <img src="../assets/img/girl.jpg" alt="">-->
-<!--                </div>-->
-<!--                <p class="name">Anuska Sharma</p>-->
-<!--            </div>-->
+            <div class="story">
+                <img src="../assets/img/model.jpg" alt="Anuska's story">
+                <div class="dp-container">
+                    <img src="../assets/img/girl.jpg" alt="">
+                </div>
+                <p class="name">Anuska Sharma</p>
+            </div>
 
-<!--            <div class="story">-->
-<!--                <img src="../assets/img/boy.jpg" alt="Story image">-->
-<!--                <span class="dp-container">-->
-<!--                        <img src="../assets/img/dp.jpg" alt="Profile pic">-->
-<!--                    </span>-->
-<!--                <span class="name">Gaurav Gall</span>-->
-<!--            </div>-->
+            <div class="story">
+                <img src="../assets/img/boy.jpg" alt="Story image">
+                <span class="dp-container">
+                        <img src="../assets/img/dp.jpg" alt="Profile pic">
+                    </span>
+                <span class="name">Gaurav Gall</span>
+            </div>
 
-<!--            <div class="story">-->
-<!--                <img src="../assets/img/mountains.jpg" alt="Story image">-->
-<!--                <span class="dp-container">-->
-<!--                        <img src="../assets/img/boy.jpg" alt="Profile pic">-->
-<!--                    </span>-->
-<!--                <span class="name">Priyank Saksena</span>-->
-<!--            </div>-->
+            <div class="story">
+                <img src="../assets/img/mountains.jpg" alt="Story image">
+                <span class="dp-container">
+                        <img src="../assets/img/boy.jpg" alt="Profile pic">
+                    </span>
+                <span class="name">Priyank Saksena</span>
+            </div>
 
-<!--            <div class="story">-->
-<!--                <img src="../assets/img/shoes.jpg" alt="Story image">-->
-<!--                <span class="dp-container">-->
-<!--                        <img src="../assets/img/model.jpg" alt="Profile pic">-->
-<!--                    </span>-->
-<!--                <span class="name">Pragati Adhikari</span>-->
-<!--            </div>-->
-<!--        </div>-->
+            <div class="story">
+                <img src="../assets/img/shoes.jpg" alt="Story image">
+                <span class="dp-container">
+                        <img src="../assets/img/model.jpg" alt="Profile pic">
+                    </span>
+                <span class="name">Pragati Adhikari</span>
+            </div>
+        </div>
 
+        <!-- Post area-->
+        <div class="post create">
+            <div class="post-top">
+                <div class="dp">
+                    <img src="../assets/img/girl.jpg" alt="">
+                </div>
+                <input onclick="open_create_post()" type="text" placeholder="What's on your mind, Aashish ?"/>
+            </div>
+
+            <div class="post-bottom">
+                <div class="action">
+                    <i class="fa fa-video"></i>
+                    <span>Live video</span>
+                </div>
+                <div class="action">
+
+                    <i class="fa fa-image"></i>
+                    <span>Photo/Video</span>
+
+                </div>
+                <div class="action">
+                    <i class="fa fa-smile"></i>
+                    <span>Feeling/Activity</span>
+                </div>
+            </div>
+            <div class="container-create-post">
+                <div class="top-create-post">
+                    <div></div>
+                    <div style="margin-top: 7px">
+                        <span> Tạo bài viết</span>
+                    </div>
+                    <div onclick="close_post()">
+                        <i class="fas fa-window-close"
+                           style="color: #d00000; padding: 20px 20px 20px 20px; font-size: 18px"></i>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
 
         <div class="post">
             <div class="post-top">
@@ -383,18 +404,68 @@
         </c:forEach>
     </div>
 
-    <div class="right-panel" style="width: 350px;background-color: ghostwhite">
-        <div class="pages-section">
-            <h4>Kết quả tìm kiếm</h4>
-            <div id="myGroup">
-            </div>
 
-        </div>
-    </div>
 </div>
 <script src="../assets/js/home.js"></script>
-<script src="../assets/js/group.js"></script>
-<script src="../assets/js/ajax/groupCRUD.js"></script>
 
 </body>
+<script>
+    let id = localStorage.getItem("id");
+    let token = localStorage.getItem("token")
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        url: "http://localhost:8080/groups/" + id,
+        //xử lý khi thành công
+        success: function (data) {
+            console.log(data)
+            showGroupFind(data);
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    })
+
+    function showGroupFind(data) {
+        let str = `
+              <img src="${data.coverGroupImg}" style="height: 300px;width: 500px">
+          <p style="margin: 20px;font-size: 40px">${data.groupName}</p>
+          <p id="status" style="margin: 20px;">${data.status}</p>
+          <button>Tham gia nhóm</button>
+
+                    `;
+        document.getElementById("groupFind").innerHTML = str;
+
+    }
+
+    getAccountGroup()
+    function getAccountGroup(){
+        let token = localStorage.getItem("token")
+        $.ajax({
+            type: "GET",
+            headers: {
+                'Accept': 'application/json'
+            },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader ("Authorization", "Bearer " + token);
+            },
+            url: "http://localhost:8080/api/user",
+            success: function (data) {
+                show_Account(data)
+            },
+            error: function (err) {
+                console.log(err)
+            }
+        })
+    }
+    function show_Account(account){
+        document.querySelector("nav .nav-right .profile").style.backgroundImage = `url("${account.avatar}")`
+    }
+</script>
 </html>

@@ -109,7 +109,7 @@ nav .nav-right {
 }
 
 nav .nav-right .profile, .container .left-panel .profile {
-    background: url('../../assets/img/avarta.jpg');
+    /*background: url('../../assets/img/avarta.jpg');*/
     height: 30px;
     width: 30px;
     background-size: cover;
@@ -717,4 +717,8 @@ window-chat-top .search-message {
     width: 100%;
     height: 100%;
     z-index: 1000;
+}
+
+.group-info-search{
+    display: block;
 }

@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 
 @RestController
@@ -23,10 +24,27 @@ public class GroupAPI {
     @Autowired
     UserAPI userAPI;
 
-    @GetMapping
+    @GetMapping("/join/{id}")
+    public void joinGroup(@PathVariable long id){
+        Group group=groupService.findById(id);
+        Set<Account> accounts=group.getAccounts();
+        accounts.add(userAPI.getAccount());
+        groupService.save(group);
+    }
+
+    @GetMapping("/check/{id}")
+    public boolean check(@PathVariable long id){
+        return groupService.check(groupService.findById(id));
+    }
+
+    @GetMapping("/GroupAcc")
     public List<Group> getAllByUser() {
         Account account=userAPI.getAccount();
         return groupService.getAllByAcc(account);
+    }
+    @GetMapping
+    public List<Group> getAllGroup() {
+        return groupService.getAllGroup();
     }
 
     @PostMapping
@@ -48,14 +66,15 @@ public class GroupAPI {
         return "../assets/img/imgGroup/"+name;
     }
 
-    @DeleteMapping("/{id}")
+    @GetMapping("/delete/{id}")
     public void delete(@PathVariable long id){
         groupService.delete(id);
     }
 
     @GetMapping("/{id}")
     public Group finById(@PathVariable long id){
-        return groupService.findById(id);
+        Group group=groupService.findById(id);
+        return group;
     }
 
     @PutMapping
