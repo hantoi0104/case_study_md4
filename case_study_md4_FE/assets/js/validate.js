@@ -9,8 +9,8 @@ function FromValidate()
     let reGexEmail = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm;
     let errorPass = document.getElementById('errorPass');
 
-    let validateName=    regexName.test(fullname)
-    let validateEmail=reGexEmail.test(email)
+    let validateName = regexName.test(fullname)
+    let validateEmail = reGexEmail.test(email)
 
 
     if (fullname =='' || fullname == null) {

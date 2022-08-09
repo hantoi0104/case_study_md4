@@ -23,11 +23,12 @@
         <img src="../assets/img/vietnamLogo.png" alt="Logo">
         <form>
             <div class="search">
-                <input name="search" type="text" oninput="searchAcc()" id="keySearch" placeholder="Search MediaSocial..">
+                <input name="search" type="text" oninput="searchAcc()" id="keySearch"
+                       placeholder="Search MediaSocial..">
                 <button type="submit" class="btn-search">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
-                <div class="search-top" >
+                <div class="search-top">
                     <div id="search-top-top">
                         <div id="show"></div>
                     </div>
@@ -49,7 +50,6 @@
             <i class="fa fa-users"></i>
         </a>
     </div>
-
     <div class="nav-right">
         <div class="nav-right-icon">
             <span class="profile"></span>
@@ -64,6 +64,9 @@
             <a href="#">
                 <i class="fas fa-ellipsis-h"></i>
             </a>
+            <div>
+                <button class="logout" onclick="logout()">Đăng xuất</button>
+            </div>
         </div>
 
         <div class="nav-right-window-chat">
@@ -89,63 +92,63 @@
 
             <div class="window-chat-main">
 
-<!--start show friend chat-->
+                <!--start show friend chat-->
 
-<!--                <a class="friend-chat" href="#" onclick="open_chat_one_one()">-->
-<!--                    <div class="item-friend">-->
-<!--                        <img src="../assets/img/avarta.jpg" alt="">-->
-<!--                        <div>-->
-<!--                            <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>-->
-<!--                            <p style="width: 250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>-->
-<!--                        </div>-->
-<!--                        <div class="icon-edit-chat">-->
-<!--                            <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </a>-->
+                <!--                <a class="friend-chat" href="#" onclick="open_chat_one_one()">-->
+                <!--                    <div class="item-friend">-->
+                <!--                        <img src="../assets/img/avarta.jpg" alt="">-->
+                <!--                        <div>-->
+                <!--                            <p style="width: 100px; font-size: 17px; margin:10px 0px 0px 10px"> Han Toi</p>-->
+                <!--                            <p style="width: 250px; font-size: 13px; margin:5px 0px 0px 10px"> Tin nhan gan nhat</p>-->
+                <!--                        </div>-->
+                <!--                        <div class="icon-edit-chat">-->
+                <!--                            <i class="fas fa-ellipsis-h" style="font-size: 18px"></i>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </a>-->
 
-<!--                End show friend chat-->
+                <!--                End show friend chat-->
             </div>
         </div>
 
-<!--        <div class="nav-right-window-chat-one-one">-->
-<!--            <div class="chat-one-one-top">-->
-<!--                <div class="info-chat-one">-->
-<!--                    <img src="../assets/img/avarta.jpg" alt="">-->
-<!--                    <div>-->
-<!--                        <p class="name-friend-chat-one" style="width: 100px; font-size: 17px; margin:5px 0px 0px 10px"></p>-->
-<!--                        <p style="width: 250px; font-size: 12px; margin:2px 0px 0px 5px"> Hoạt động 4 giờ trước</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="action-chat-one">-->
-<!--                    <i class="fas fa-video"></i>-->
-<!--                    <i class="fas fa-phone-alt"></i>-->
-<!--                    <i class="fas fa-window-close" onclick="close_chat_one_one()"></i>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="chat-one-one-middle">-->
+        <!--        <div class="nav-right-window-chat-one-one">-->
+        <!--            <div class="chat-one-one-top">-->
+        <!--                <div class="info-chat-one">-->
+        <!--                    <img src="../assets/img/avarta.jpg" alt="">-->
+        <!--                    <div>-->
+        <!--                        <p class="name-friend-chat-one" style="width: 100px; font-size: 17px; margin:5px 0px 0px 10px"></p>-->
+        <!--                        <p style="width: 250px; font-size: 12px; margin:2px 0px 0px 5px"> Hoạt động 4 giờ trước</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <div class="action-chat-one">-->
+        <!--                    <i class="fas fa-video"></i>-->
+        <!--                    <i class="fas fa-phone-alt"></i>-->
+        <!--                    <i class="fas fa-window-close" onclick="close_chat_one_one()"></i>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="chat-one-one-middle">-->
 
 
-<!--            </div>-->
-<!--            <div class="chat-one-one-bottom">-->
-<!--                <div class="chat-one-one-bottom-left">-->
-<!--                    <i class="fas fa-plus-circle"></i>-->
-<!--                    <i class="fas fa-images"></i>-->
-<!--                    <i class="fas fa-grin-alt"></i>-->
-<!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="chat-one-one-bottom">-->
+        <!--                <div class="chat-one-one-bottom-left">-->
+        <!--                    <i class="fas fa-plus-circle"></i>-->
+        <!--                    <i class="fas fa-images"></i>-->
+        <!--                    <i class="fas fa-grin-alt"></i>-->
+        <!--                </div>-->
 
-<!--                <div class ="chat-one-one-bottom-right">-->
-<!--                    <div class="send-message-input">-->
-<!--                        <input placeholder="Nhập tin nhắn">-->
-<!--                        <i class="fas fa-thumbs-up" ></i>-->
-<!--                    </div>-->
-<!--                    <div class="send-message-button" >-->
-<!--                        <p>Send</p>-->
-<!--                    </div>-->
+        <!--                <div class ="chat-one-one-bottom-right">-->
+        <!--                    <div class="send-message-input">-->
+        <!--                        <input placeholder="Nhập tin nhắn">-->
+        <!--                        <i class="fas fa-thumbs-up" ></i>-->
+        <!--                    </div>-->
+        <!--                    <div class="send-message-button" >-->
+        <!--                        <p>Send</p>-->
+        <!--                    </div>-->
 
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
 
     </div>
 </nav>
@@ -298,11 +301,8 @@
         <div class="post" id="timeLine">
 
         </div>
-<!--    end post-->
+        <!--    end post-->
     </div>
-
-
-
 
 
     <div class="right-panel">
@@ -349,7 +349,7 @@
         </div>
     </div>
 </div>
-<div class="container-create-post" >
+<div class="container-create-post">
     <div class="top-create-post">
         <div></div>
         <div style="margin-top: 7px">
@@ -359,10 +359,10 @@
             <i class="fas fa-window-close" style="color: #d00000; padding: 20px 20px 20px 20px; font-size: 18px"></i>
         </div>
     </div>
-    <div class="body-create-post" >
+    <div class="body-create-post">
         <div id="acc-info">
-            <div class='dp' >
-                <img id="imgCreateP" width="100%"  src="" alt="">
+            <div class='dp'>
+                <img id="imgCreateP" width="100%" src="" alt="">
             </div>
             <div style="padding-left:15px ;width: 150px;height: 50px;margin: 6px">
                 <h5 id="userCreateP" style="padding-bottom: 5px">Hoàng Công Hậu</h5>
@@ -373,19 +373,20 @@
                 </select>
             </div>
         </div>
-        <div style="overflow: auto;width: auto;height: 180px" >
+        <div style="overflow: auto;width: auto;height: 180px">
             <div>
                 <textarea id="content" style="height: 100px;width: 100%" placeholder="Bạn đang nghĩ gì ?"></textarea>
             </div>
-             <div id="img" style=" display: none; justify-content: space-between">
-                 <img style="width: 300px;height: auto;margin: auto" id="image" src=""  alt="">
+            <div id="img" style=" display: none; justify-content: space-between">
+                <img style="width: 300px;height: auto;margin: auto" id="image" src="" alt="">
 
-                 <div onclick="del_img()">
-                     <i class="fas fa-window-close" style="color: gray; padding: 20px 20px 20px 20px; font-size: 18px"></i>
-                 </div>
-             </div>
+                <div onclick="del_img()">
+                    <i class="fas fa-window-close"
+                       style="color: gray; padding: 20px 20px 20px 20px; font-size: 18px"></i>
+                </div>
+            </div>
         </div>
-        <div  style="  display: flex;
+        <div style="  display: flex;
                         justify-content: left;
                         width: auto;
                         height: 40px;
@@ -397,9 +398,9 @@
             <h5 style="padding-right: 10px">Thêm vào bài viết của bạn</h5>
             <div class="action">
                 <label for="inputFile"><i style="color: red" class="fa fa-image"></i>
-                    <span style="color: red" >Photo/Video</span></label>
-                <input type="file" id="inputFile" onchange="choosefile(this)"  hidden >
-                <input type="file" id="duphong"  hidden>
+                    <span style="color: red">Photo/Video</span></label>
+                <input type="file" id="inputFile" onchange="choosefile(this)" hidden>
+                <input type="file" id="duphong" hidden>
 
             </div>
         </div>
@@ -408,7 +409,8 @@
                             height: 25px;
                             background-color: #3069D9;
                             border-radius: 4px;" onclick="uploadFilePost()"
-        >Đăng</button>
+        >Đăng
+        </button>
     </div>
 </div>
 <div class='color-body-create-post' style="display: none" onclick="close_create_post()" id="manche"></div>

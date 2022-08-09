@@ -142,4 +142,7 @@ function showSearch(data, search) {
     document.getElementById("show").innerHTML = str;
 }
 
-
+function logout(){
+    localStorage.clear();
+    location.href = "login.html"
+}
